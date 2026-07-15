@@ -192,6 +192,14 @@
     </a>
   </nav>
 
+  <!-- ============================= FLOATING RESERVE BUTTON ============================= -->
+  <!-- Appears after scrolling past the hero; fades out once the booking section is in view. -->
+  <a href="#reserve" id="floating-reserve" aria-label="Reserve a stay"
+     class="fixed bottom-6 right-6 z-40 inline-flex items-center gap-2 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-cream-50 font-semibold px-6 py-4 shadow-xl opacity-0 translate-y-4 pointer-events-none transition-all duration-300">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+    <span>Reserve a Stay</span>
+  </a>
+
   <main id="home">
     <!-- ============================= HERO ============================= -->
     <section class="relative hero-bg min-h-screen flex items-center">
@@ -746,6 +754,28 @@
           });
         }, { rootMargin: '-50% 0px -50% 0px', threshold: 0 });
         sections.forEach(function (s) { sectionObserver.observe(s); });
+      }
+
+      /* ---- Floating "Reserve a Stay" button ---- */
+      /* Shows once the hero is mostly scrolled away; hides again once the
+         booking section rises into view so it never covers the form. */
+      var floatBtn = document.getElementById('floating-reserve');
+      var heroSection = document.querySelector('.hero-bg');
+      var reserveSection = document.getElementById('reserve');
+      if (floatBtn && heroSection && reserveSection) {
+        var shownCls = ['opacity-100', 'translate-y-0', 'pointer-events-auto'];
+        var hiddenCls = ['opacity-0', 'translate-y-4', 'pointer-events-none'];
+        function updateFloatBtn() {
+          var vh = window.innerHeight;
+          var pastHero = heroSection.getBoundingClientRect().bottom < vh * 0.4;
+          var reserveInView = reserveSection.getBoundingClientRect().top < vh * 0.85;
+          var show = pastHero && !reserveInView;
+          shownCls.forEach(function (c) { floatBtn.classList.toggle(c, show); });
+          hiddenCls.forEach(function (c) { floatBtn.classList.toggle(c, !show); });
+        }
+        window.addEventListener('scroll', updateFloatBtn, { passive: true });
+        window.addEventListener('resize', updateFloatBtn);
+        updateFloatBtn();
       }
 
       /* ---- Formspree submit handler (AJAX) ---- */
