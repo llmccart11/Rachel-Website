@@ -463,29 +463,28 @@
           <!-- Pricing card -->
           <div class="reveal lg:col-span-2">
             <div class="bg-ink text-cream-50 rounded-[2rem] p-8 sm:p-10 shadow-xl lg:sticky lg:top-28">
-              <h3 class="font-serif text-2xl mb-1">Our Rates</h3>
-              <p class="text-cream-100/60 text-sm mb-8">Per night, per dog</p>
+              <h3 class="font-serif text-2xl mb-1">Nightly Rates</h3>
+              <p class="text-cream-100/60 text-sm mb-8">Per dog</p>
 
-              <div class="grid grid-cols-2 gap-4">
-                <!-- Weekday column -->
-                <div class="rounded-2xl bg-cream-50/5 border border-cream-100/10 p-5 text-center">
-                  <p class="text-xs font-semibold uppercase tracking-[0.2em] text-terracotta-200 mb-4">Weekday</p>
-                  <p class="font-serif text-4xl text-cream-50 leading-none">$85</p>
-                  <p class="text-cream-100/60 text-xs mt-1">First dog / night</p>
-                  <div class="border-t border-cream-100/15 mt-4 pt-4">
-                    <p class="font-serif text-2xl text-terracotta-200 leading-none">$75</p>
-                    <p class="text-cream-100/60 text-xs mt-1">Each additional dog</p>
-                  </div>
+              <!-- Rows: First dog / Each additional dog · Columns: Weekday / Weekend -->
+              <div>
+                <!-- Column headers -->
+                <div class="grid grid-cols-[1.6fr_1fr_1fr] items-end pb-3 border-b border-cream-100/15">
+                  <span></span>
+                  <span class="text-center text-xs font-semibold uppercase tracking-[0.15em] text-terracotta-200">Weekday</span>
+                  <span class="text-center text-xs font-semibold uppercase tracking-[0.15em] text-terracotta-200">Weekend</span>
                 </div>
-                <!-- Weekend column -->
-                <div class="rounded-2xl bg-cream-50/5 border border-cream-100/10 p-5 text-center">
-                  <p class="text-xs font-semibold uppercase tracking-[0.2em] text-terracotta-200 mb-4">Weekend</p>
-                  <p class="font-serif text-4xl text-cream-50 leading-none">$90</p>
-                  <p class="text-cream-100/60 text-xs mt-1">First dog / night</p>
-                  <div class="border-t border-cream-100/15 mt-4 pt-4">
-                    <p class="font-serif text-2xl text-terracotta-200 leading-none">$80</p>
-                    <p class="text-cream-100/60 text-xs mt-1">Each additional dog</p>
-                  </div>
+                <!-- First dog -->
+                <div class="grid grid-cols-[1.6fr_1fr_1fr] items-center py-4 border-b border-cream-100/15">
+                  <span class="font-semibold text-cream-50">First dog</span>
+                  <span class="text-center font-serif text-2xl text-cream-50">$85</span>
+                  <span class="text-center font-serif text-2xl text-cream-50">$90</span>
+                </div>
+                <!-- Each additional dog -->
+                <div class="grid grid-cols-[1.6fr_1fr_1fr] items-center pt-4">
+                  <span class="font-semibold text-cream-50">Each additional dog</span>
+                  <span class="text-center font-serif text-2xl text-terracotta-200">$75</span>
+                  <span class="text-center font-serif text-2xl text-terracotta-200">$80</span>
                 </div>
               </div>
             </div>
