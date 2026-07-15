@@ -412,9 +412,14 @@
         <div class="grid lg:grid-cols-2 gap-8">
           <!-- Outdoor -->
           <div class="reveal bg-cream-50 rounded-[2rem] overflow-hidden border border-cream-300 shadow-sm">
-            <div class="aspect-[16/10] bg-tan-100 overflow-hidden">
-              <!-- PHOTO: upload images/property-outdoor.jpg (landscape works best) -->
-              <img src="images/property-outdoor.jpg" onerror="this.style.display='none'" alt="Outdoor space at the retreat" class="w-full h-full object-cover" />
+            <!-- PHOTOS: upload images/property-outdoor-1.jpg, -2.jpg, -3.jpg (landscape; 2-3 photos, swipeable) -->
+            <div class="property-carousel relative">
+              <div class="carousel-track aspect-[16/10] bg-tan-100 flex overflow-x-auto snap-x snap-mandatory no-scrollbar">
+                <img src="images/property-outdoor-1.jpg" onerror="this.style.display='none'" alt="Outdoor space at the retreat" class="snap-center shrink-0 w-full h-full object-cover" />
+                <img src="images/property-outdoor-2.jpg" onerror="this.style.display='none'" alt="Outdoor space at the retreat" class="snap-center shrink-0 w-full h-full object-cover" />
+                <img src="images/property-outdoor-3.jpg" onerror="this.style.display='none'" alt="Outdoor space at the retreat" class="snap-center shrink-0 w-full h-full object-cover" />
+              </div>
+              <div class="carousel-dots absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5"></div>
             </div>
             <div class="p-8 sm:p-10">
               <div class="flex items-center gap-3 mb-4">
@@ -429,9 +434,14 @@
 
           <!-- Indoor -->
           <div class="reveal bg-cream-50 rounded-[2rem] overflow-hidden border border-cream-300 shadow-sm" style="transition-delay:.08s">
-            <div class="aspect-[16/10] bg-tan-100 overflow-hidden">
-              <!-- PHOTO: upload images/property-indoor.jpg (landscape works best) -->
-              <img src="images/property-indoor.jpg" onerror="this.style.display='none'" alt="Indoor lounge space at the retreat" class="w-full h-full object-cover" />
+            <!-- PHOTOS: upload images/property-indoor-1.jpg, -2.jpg, -3.jpg (landscape; 2-3 photos, swipeable) -->
+            <div class="property-carousel relative">
+              <div class="carousel-track aspect-[16/10] bg-tan-100 flex overflow-x-auto snap-x snap-mandatory no-scrollbar">
+                <img src="images/property-indoor-1.jpg" onerror="this.style.display='none'" alt="Indoor lounge space at the retreat" class="snap-center shrink-0 w-full h-full object-cover" />
+                <img src="images/property-indoor-2.jpg" onerror="this.style.display='none'" alt="Indoor lounge space at the retreat" class="snap-center shrink-0 w-full h-full object-cover" />
+                <img src="images/property-indoor-3.jpg" onerror="this.style.display='none'" alt="Indoor lounge space at the retreat" class="snap-center shrink-0 w-full h-full object-cover" />
+              </div>
+              <div class="carousel-dots absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5"></div>
             </div>
             <div class="p-8 sm:p-10">
               <div class="flex items-center gap-3 mb-4">
@@ -795,6 +805,52 @@
         window.addEventListener('resize', updateFloatBtn);
         updateFloatBtn();
       }
+
+      /* ---- Property photo carousels (swipeable, with position dots) ---- */
+      /* Dots reflect only the photos that actually loaded, so empty slots are
+         skipped; a single photo shows no dots. */
+      document.querySelectorAll('.property-carousel').forEach(function (car) {
+        var track = car.querySelector('.carousel-track');
+        var dotsWrap = car.querySelector('.carousel-dots');
+        var imgs = Array.prototype.slice.call(track.querySelectorAll('img'));
+        function shown() { return imgs.filter(function (im) { return im.style.display !== 'none'; }); }
+        function updateActive() {
+          var vis = shown();
+          var dots = dotsWrap.querySelectorAll('.carousel-dot');
+          if (!dots.length) return;
+          var idx = track.clientWidth ? Math.round(track.scrollLeft / track.clientWidth) : 0;
+          idx = Math.max(0, Math.min(idx, vis.length - 1));
+          dots.forEach(function (d, i) {
+            d.classList.toggle('bg-cream-50', i === idx);
+            d.classList.toggle('bg-cream-50/50', i !== idx);
+          });
+        }
+        function buildDots() {
+          var vis = shown();
+          dotsWrap.innerHTML = '';
+          if (vis.length < 2) return; // no dots for 0 or 1 photo
+          vis.forEach(function (im, i) {
+            var d = document.createElement('button');
+            d.type = 'button';
+            d.className = 'carousel-dot w-2 h-2 rounded-full bg-cream-50/50 hover:bg-cream-50 shadow transition';
+            d.setAttribute('aria-label', 'Go to photo ' + (i + 1));
+            d.addEventListener('click', function () {
+              track.scrollTo({ left: i * track.clientWidth, behavior: 'smooth' });
+            });
+            dotsWrap.appendChild(d);
+          });
+          updateActive();
+        }
+        imgs.forEach(function (im) {
+          im.addEventListener('load', buildDots);
+          im.addEventListener('error', buildDots);
+        });
+        track.addEventListener('scroll', updateActive, { passive: true });
+        window.addEventListener('resize', updateActive);
+        // Authoritative rebuild once every image has settled (avoids load/error races).
+        window.addEventListener('load', buildDots);
+        buildDots();
+      });
 
       /* ---- Formspree submit handler (AJAX) ---- */
       var form = document.getElementById('intake-form');

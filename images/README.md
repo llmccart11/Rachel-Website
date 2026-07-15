@@ -15,8 +15,8 @@ spot shows a soft tan placeholder (no broken-image icons).
 | `dobby.jpg` | Meet the Locals — Dobby | Portrait |
 | `mia.jpg` | Meet the Locals — Mia | Portrait |
 | `rachel.jpg` | About Me — Rachel's portrait | Portrait |
-| `property-outdoor.jpg` | The Property — Outdoor Space | Landscape (e.g. 1200×750) |
-| `property-indoor.jpg` | The Property — Indoor Space | Landscape |
+| `property-outdoor-1.jpg`, `-2.jpg`, `-3.jpg` | The Property — Outdoor Space (swipeable, 2–3 photos) | Landscape (e.g. 1200×750) |
+| `property-indoor-1.jpg`, `-2.jpg`, `-3.jpg` | The Property — Indoor Space (swipeable, 2–3 photos) | Landscape |
 | `gallery-1.jpg` … `gallery-8.jpg` | Gallery grid (8 photos) | Square (e.g. 800×800) |
 
 ## Tips
