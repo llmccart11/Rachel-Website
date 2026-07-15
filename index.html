@@ -98,6 +98,29 @@
       background-position: center;
     }
 
+    /* Sticky nav: light text over the hero photo, dark once it gains the cream bg */
+    #site-nav .nav-word, #site-nav .nav-sub, #site-nav .nav-link, #site-nav .nav-toggle {
+      transition: color 0.3s ease;
+    }
+    #site-nav .nav-word  { color: #FDFBF7; }
+    #site-nav .nav-sub   { color: rgba(253, 251, 247, 0.72); }
+    #site-nav .nav-link  { color: rgba(253, 251, 247, 0.92); }
+    #site-nav .nav-toggle{ color: #FDFBF7; }
+    #site-nav .nav-link:hover,
+    #site-nav .group:hover .nav-word { color: #E4B199; }
+
+    #site-nav.scrolled {
+      background: rgba(250, 245, 236, 0.95);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    }
+    #site-nav.scrolled .nav-word  { color: #3B2E25; }
+    #site-nav.scrolled .nav-sub   { color: #B08E5E; }
+    #site-nav.scrolled .nav-link  { color: rgba(59, 46, 37, 0.8); }
+    #site-nav.scrolled .nav-toggle{ color: #3B2E25; }
+    #site-nav.scrolled .nav-link:hover,
+    #site-nav.scrolled .group:hover .nav-word { color: #A85A38; }
+
     /* Hide scrollbar on the mobile carousel while keeping it scrollable */
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     .no-scrollbar::-webkit-scrollbar { display: none; }
@@ -125,23 +148,23 @@
       <a href="#home" class="flex items-center gap-3 group">
         <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-terracotta-500 text-cream-50 font-serif text-lg leading-none shadow-sm">HB</span>
         <span class="leading-tight">
-          <span class="block font-serif text-lg sm:text-xl text-ink group-hover:text-terracotta-500 transition-colors">High Bridge</span>
-          <span class="block text-[10px] sm:text-xs tracking-[0.25em] uppercase text-tan-400">Dog Retreat</span>
+          <span class="nav-word block font-serif text-lg sm:text-xl">High Bridge</span>
+          <span class="nav-sub block text-[10px] sm:text-xs tracking-[0.25em] uppercase">Dog Retreat</span>
         </span>
       </a>
 
       <!-- Desktop links -->
-      <div class="hidden lg:flex items-center gap-8 text-sm font-semibold text-ink/80">
-        <a href="#why" class="hover:text-terracotta-500 transition-colors">Why Us</a>
-        <a href="#locals" class="hover:text-terracotta-500 transition-colors">Meet the Locals</a>
-        <a href="#about" class="hover:text-terracotta-500 transition-colors">About Rachel</a>
-        <a href="#property" class="hover:text-terracotta-500 transition-colors">The Property</a>
-        <a href="#gallery" class="hover:text-terracotta-500 transition-colors">Gallery</a>
+      <div class="hidden lg:flex items-center gap-8 text-sm font-semibold">
+        <a href="#why" class="nav-link">Why Us</a>
+        <a href="#locals" class="nav-link">Meet the Locals</a>
+        <a href="#about" class="nav-link">About Rachel</a>
+        <a href="#property" class="nav-link">The Property</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
         <a href="#reserve" class="inline-flex items-center rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-cream-50 px-5 py-2.5 shadow-sm transition-colors">Reserve a Stay</a>
       </div>
 
       <!-- Mobile hamburger -->
-      <button id="menu-toggle" aria-label="Open menu" aria-expanded="false" class="lg:hidden inline-flex items-center justify-center w-11 h-11 rounded-full text-ink hover:bg-cream-200 transition-colors">
+      <button id="menu-toggle" aria-label="Open menu" aria-expanded="false" class="nav-toggle lg:hidden inline-flex items-center justify-center w-11 h-11 rounded-full hover:bg-cream-200/40 transition-colors">
         <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" /></svg>
         <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18" /></svg>
       </button>
@@ -685,11 +708,7 @@
       /* ---- Sticky nav: solid background + shadow on scroll ---- */
       var nav = document.getElementById('site-nav');
       function onScroll() {
-        if (window.scrollY > 20) {
-          nav.classList.add('bg-cream-100/95', 'backdrop-blur', 'shadow-sm');
-        } else {
-          nav.classList.remove('bg-cream-100/95', 'backdrop-blur', 'shadow-sm');
-        }
+        nav.classList.toggle('scrolled', window.scrollY > 20);
       }
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
