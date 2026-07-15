@@ -89,11 +89,12 @@
       transform: scale(1.5);
     }
 
-    /* Hero background image placeholder — REPLACE url() with your real hero photo */
+    /* Hero background — upload your photo to images/hero.jpg (warm fallback shows until then) */
     .hero-bg {
+      background-color: #8F4A2C;
       background-image:
         linear-gradient(to bottom, rgba(59,46,37,0.45), rgba(59,46,37,0.55)),
-        url('https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1920&q=80');
+        url('images/hero.jpg');
       background-size: cover;
       background-position: center;
     }
@@ -321,8 +322,8 @@
           <!-- Spring -->
           <figure class="reveal group snap-center shrink-0 w-[80%] sm:w-auto bg-cream-50 rounded-3xl overflow-hidden border border-cream-300 hover:shadow-xl transition-all duration-300">
             <div class="aspect-[4/5] bg-tan-100 flex items-center justify-center overflow-hidden">
-              <!-- PHOTO SLOT: replace src with a photo of Spring -->
-              <img src="https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?auto=format&fit=crop&w=600&q=80" alt="Spring, resident dog" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <!-- PHOTO: upload images/spring.jpg (portrait works best) -->
+              <img src="images/spring.jpg" onerror="this.style.display='none'" alt="Spring, resident dog" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             </div>
             <figcaption class="p-6">
               <h3 class="font-serif text-2xl text-ink mb-1">Spring</h3>
@@ -333,8 +334,8 @@
           <!-- Cannoli -->
           <figure class="reveal group snap-center shrink-0 w-[80%] sm:w-auto bg-cream-50 rounded-3xl overflow-hidden border border-cream-300 hover:shadow-xl transition-all duration-300" style="transition-delay:.05s">
             <div class="aspect-[4/5] bg-tan-100 flex items-center justify-center overflow-hidden">
-              <!-- PHOTO SLOT: replace src with a photo of Cannoli -->
-              <img src="https://images.unsplash.com/photo-1568572933382-74d440642117?auto=format&fit=crop&w=600&q=80" alt="Cannoli, resident dog" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <!-- PHOTO: upload images/cannoli.jpg (portrait works best) -->
+              <img src="images/cannoli.jpg" onerror="this.style.display='none'" alt="Cannoli, resident dog" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             </div>
             <figcaption class="p-6">
               <h3 class="font-serif text-2xl text-ink mb-1">Cannoli</h3>
@@ -345,8 +346,8 @@
           <!-- Dobby -->
           <figure class="reveal group snap-center shrink-0 w-[80%] sm:w-auto bg-cream-50 rounded-3xl overflow-hidden border border-cream-300 hover:shadow-xl transition-all duration-300" style="transition-delay:.1s">
             <div class="aspect-[4/5] bg-tan-100 flex items-center justify-center overflow-hidden">
-              <!-- PHOTO SLOT: replace src with a photo of Dobby -->
-              <img src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=600&q=80" alt="Dobby, resident dog" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <!-- PHOTO: upload images/dobby.jpg (portrait works best) -->
+              <img src="images/dobby.jpg" onerror="this.style.display='none'" alt="Dobby, resident dog" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             </div>
             <figcaption class="p-6">
               <h3 class="font-serif text-2xl text-ink mb-1">Dobby</h3>
@@ -357,8 +358,8 @@
           <!-- Mia -->
           <figure class="reveal group snap-center shrink-0 w-[80%] sm:w-auto bg-cream-50 rounded-3xl overflow-hidden border border-cream-300 hover:shadow-xl transition-all duration-300" style="transition-delay:.15s">
             <div class="aspect-[4/5] bg-tan-100 flex items-center justify-center overflow-hidden">
-              <!-- PHOTO SLOT: replace src with a photo of Mia -->
-              <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=600&q=80" alt="Mia, resident dog" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <!-- PHOTO: upload images/mia.jpg (portrait works best) -->
+              <img src="images/mia.jpg" onerror="this.style.display='none'" alt="Mia, resident dog" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             </div>
             <figcaption class="p-6">
               <h3 class="font-serif text-2xl text-ink mb-1">Mia</h3>
@@ -378,8 +379,8 @@
           <div class="reveal order-1 lg:order-none">
             <div class="relative">
               <div class="aspect-[4/5] rounded-[2rem] overflow-hidden bg-tan-100 shadow-xl">
-                <!-- PHOTO SLOT: replace src with a portrait of Rachel -->
-                <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=800&q=80" alt="Rachel, owner of High Bridge Dog Retreat" class="w-full h-full object-cover" />
+                <!-- PHOTO: upload images/rachel.jpg (portrait works best) -->
+                <img src="images/rachel.jpg" onerror="this.style.display='none'" alt="Rachel, owner of High Bridge Dog Retreat" class="w-full h-full object-cover" />
               </div>
               <div class="hidden sm:block absolute -bottom-6 -right-6 bg-terracotta-500 text-cream-50 rounded-2xl px-7 py-5 shadow-lg">
                 <span class="block font-serif text-3xl leading-none">60+</span>
@@ -412,8 +413,8 @@
           <!-- Outdoor -->
           <div class="reveal bg-cream-50 rounded-[2rem] overflow-hidden border border-cream-300 shadow-sm">
             <div class="aspect-[16/10] bg-tan-100 overflow-hidden">
-              <!-- PHOTO SLOT: replace with a photo of the outdoor space / yards -->
-              <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1000&q=80" alt="Outdoor space at the retreat" class="w-full h-full object-cover" />
+              <!-- PHOTO: upload images/property-outdoor.jpg (landscape works best) -->
+              <img src="images/property-outdoor.jpg" onerror="this.style.display='none'" alt="Outdoor space at the retreat" class="w-full h-full object-cover" />
             </div>
             <div class="p-8 sm:p-10">
               <div class="flex items-center gap-3 mb-4">
@@ -429,8 +430,8 @@
           <!-- Indoor -->
           <div class="reveal bg-cream-50 rounded-[2rem] overflow-hidden border border-cream-300 shadow-sm" style="transition-delay:.08s">
             <div class="aspect-[16/10] bg-tan-100 overflow-hidden">
-              <!-- PHOTO SLOT: replace with a photo of the indoor space / lower-level lounge -->
-              <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1000&q=80" alt="Indoor lounge space at the retreat" class="w-full h-full object-cover" />
+              <!-- PHOTO: upload images/property-indoor.jpg (landscape works best) -->
+              <img src="images/property-indoor.jpg" onerror="this.style.display='none'" alt="Indoor lounge space at the retreat" class="w-full h-full object-cover" />
             </div>
             <div class="p-8 sm:p-10">
               <div class="flex items-center gap-3 mb-4">
@@ -454,31 +455,31 @@
           <p class="reveal text-ink/70 text-lg leading-relaxed">A look at some of our past guests enjoying their stay. Add your own favorites here anytime.</p>
         </div>
 
-        <!-- PHOTO SLOTS: replace each src with a real guest photo -->
+        <!-- PHOTOS: upload images/gallery-1.jpg through images/gallery-8.jpg (square works best) -->
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
           <div class="reveal aspect-square rounded-2xl overflow-hidden bg-tan-100 group">
-            <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=500&q=80" alt="Guest dog having fun" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <img src="images/gallery-1.jpg" onerror="this.style.display='none'" alt="Guest dog having fun" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
           </div>
           <div class="reveal aspect-square rounded-2xl overflow-hidden bg-tan-100 group" style="transition-delay:.05s">
-            <img src="https://images.unsplash.com/photo-1477884213360-7e9d7dcc1e48?auto=format&fit=crop&w=500&q=80" alt="Guest dog having fun" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <img src="images/gallery-2.jpg" onerror="this.style.display='none'" alt="Guest dog having fun" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
           </div>
           <div class="reveal aspect-square rounded-2xl overflow-hidden bg-tan-100 group" style="transition-delay:.1s">
-            <img src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=500&q=80" alt="Guest dog having fun" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <img src="images/gallery-3.jpg" onerror="this.style.display='none'" alt="Guest dog having fun" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
           </div>
           <div class="reveal aspect-square rounded-2xl overflow-hidden bg-tan-100 group" style="transition-delay:.15s">
-            <img src="https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=500&q=80" alt="Guest dog having fun" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <img src="images/gallery-4.jpg" onerror="this.style.display='none'" alt="Guest dog having fun" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
           </div>
           <div class="reveal aspect-square rounded-2xl overflow-hidden bg-tan-100 group">
-            <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=500&q=80" alt="Guest dog having fun" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <img src="images/gallery-5.jpg" onerror="this.style.display='none'" alt="Guest dog having fun" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
           </div>
           <div class="reveal aspect-square rounded-2xl overflow-hidden bg-tan-100 group" style="transition-delay:.05s">
-            <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=500&q=80" alt="Guest dog having fun" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <img src="images/gallery-6.jpg" onerror="this.style.display='none'" alt="Guest dog having fun" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
           </div>
           <div class="reveal aspect-square rounded-2xl overflow-hidden bg-tan-100 group" style="transition-delay:.1s">
-            <img src="https://images.unsplash.com/photo-1477884213360-7e9d7dcc1e48?auto=format&fit=crop&w=500&q=80" alt="Guest dog having fun" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <img src="images/gallery-7.jpg" onerror="this.style.display='none'" alt="Guest dog having fun" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
           </div>
           <div class="reveal aspect-square rounded-2xl overflow-hidden bg-tan-100 group" style="transition-delay:.15s">
-            <img src="https://images.unsplash.com/photo-1425082661705-1834bfd09dca?auto=format&fit=crop&w=500&q=80" alt="Guest dog having fun" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <img src="images/gallery-8.jpg" onerror="this.style.display='none'" alt="Guest dog having fun" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
           </div>
         </div>
       </div>
