@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>High Bridge Dog Retreat — Luxury Cage-Free Dog Boarding in Monroe, WA</title>
+  <meta name="description" content="High Bridge Dog Retreat is a premium, boutique, cage-free dog boarding business on 2.5 acres in Monroe, WA. Small-group, in-home care with daily updates. From $85/night." />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Playfair Display (serif display) + Nunito Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: {
+              50:  '#FDFBF7',
+              100: '#FAF5EC',
+              200: '#F3E9D7',
+              300: '#EBDCC2',
+            },
+            terracotta: {
+              50:  '#FBF0EA',
+              100: '#F3D9CB',
+              200: '#E4B199',
+              300: '#D28C6A',
+              400: '#C1714B',
+              500: '#A85A38', /* primary accent */
+              600: '#8F4A2C',
+              700: '#733A22',
+            },
+            tan: {
+              100: '#EFE4D2',
+              200: '#DFC9A8',
+              300: '#C9A97C',
+              400: '#B08E5E',
+            },
+            ink: '#3B2E25',
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Nunito Sans"', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { -webkit-font-smoothing: antialiased; }
+
+    /* Section offset so smooth-scroll clears the sticky nav */
+    section[id] { scroll-margin-top: 80px; }
+
+    /* Reveal-on-scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    /* Floating jump menu active state */
+    .jump-link .jump-dot { transition: all 0.3s ease; }
+    .jump-link .jump-label {
+      opacity: 0;
+      transform: translateX(6px);
+      transition: all 0.25s ease;
+      pointer-events: none;
+    }
+    .jump-link:hover .jump-label { opacity: 1; transform: translateX(0); }
+    .jump-link.active .jump-dot {
+      background-color: #A85A38;
+      transform: scale(1.5);
+    }
+
+    /* Hero background image placeholder — REPLACE url() with your real hero photo */
+    .hero-bg {
+      background-image:
+        linear-gradient(to bottom, rgba(59,46,37,0.45), rgba(59,46,37,0.55)),
+        url('https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Decorative divider */
+    .divider-dot::before,
+    .divider-dot::after {
+      content: '';
+      display: inline-block;
+      height: 1px;
+      width: 48px;
+      background: #C9A97C;
+      vertical-align: middle;
+      margin: 0 14px;
+    }
+  </style>
+</head>
+
+<body class="bg-cream-50 text-ink font-sans antialiased">
+
+  <!-- ============================= STICKY TOP NAV ============================= -->
+  <header id="site-nav" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+    <nav class="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between h-20 transition-all duration-300">
+      <!-- Wordmark -->
+      <a href="#home" class="flex items-center gap-3 group">
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-terracotta-500 text-cream-50 font-serif text-lg leading-none shadow-sm">HB</span>
+        <span class="leading-tight">
+          <span class="block font-serif text-lg sm:text-xl text-ink group-hover:text-terracotta-500 transition-colors">High Bridge</span>
+          <span class="block text-[10px] sm:text-xs tracking-[0.25em] uppercase text-tan-400">Dog Retreat</span>
+        </span>
+      </a>
+
+      <!-- Desktop links -->
+      <div class="hidden lg:flex items-center gap-8 text-sm font-semibold text-ink/80">
+        <a href="#why" class="hover:text-terracotta-500 transition-colors">Why Us</a>
+        <a href="#locals" class="hover:text-terracotta-500 transition-colors">Meet the Locals</a>
+        <a href="#about" class="hover:text-terracotta-500 transition-colors">About Rachel</a>
+        <a href="#property" class="hover:text-terracotta-500 transition-colors">The Property</a>
+        <a href="#gallery" class="hover:text-terracotta-500 transition-colors">Gallery</a>
+        <a href="#reserve" class="inline-flex items-center rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-cream-50 px-5 py-2.5 shadow-sm transition-colors">Reserve a Stay</a>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button id="menu-toggle" aria-label="Open menu" aria-expanded="false" class="lg:hidden inline-flex items-center justify-center w-11 h-11 rounded-full text-ink hover:bg-cream-200 transition-colors">
+        <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" /></svg>
+        <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18" /></svg>
+      </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="lg:hidden hidden bg-cream-100/98 backdrop-blur border-t border-cream-300 shadow-lg">
+      <div class="px-6 py-5 flex flex-col gap-1 text-base font-semibold text-ink">
+        <a href="#why" class="mobile-link py-3 border-b border-cream-300 hover:text-terracotta-500">Why Us</a>
+        <a href="#locals" class="mobile-link py-3 border-b border-cream-300 hover:text-terracotta-500">Meet the Locals</a>
+        <a href="#about" class="mobile-link py-3 border-b border-cream-300 hover:text-terracotta-500">About Rachel</a>
+        <a href="#property" class="mobile-link py-3 border-b border-cream-300 hover:text-terracotta-500">The Property</a>
+        <a href="#gallery" class="mobile-link py-3 border-b border-cream-300 hover:text-terracotta-500">Gallery</a>
+        <a href="#reserve" class="mobile-link mt-3 text-center rounded-full bg-terracotta-500 text-cream-50 px-5 py-3">Reserve a Stay</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================= FLOATING JUMP MENU ============================= -->
+  <nav aria-label="Section navigation" class="hidden xl:flex flex-col gap-5 fixed right-8 top-1/2 -translate-y-1/2 z-40">
+    <a href="#home" data-target="home" class="jump-link active flex items-center justify-end gap-3 group">
+      <span class="jump-label text-xs font-semibold uppercase tracking-wider text-ink bg-cream-100 px-2.5 py-1 rounded-full shadow-sm">Home</span>
+      <span class="jump-dot w-2.5 h-2.5 rounded-full bg-tan-300"></span>
+    </a>
+    <a href="#why" data-target="why" class="jump-link flex items-center justify-end gap-3 group">
+      <span class="jump-label text-xs font-semibold uppercase tracking-wider text-ink bg-cream-100 px-2.5 py-1 rounded-full shadow-sm">Why Us</span>
+      <span class="jump-dot w-2.5 h-2.5 rounded-full bg-tan-300"></span>
+    </a>
+    <a href="#locals" data-target="locals" class="jump-link flex items-center justify-end gap-3 group">
+      <span class="jump-label text-xs font-semibold uppercase tracking-wider text-ink bg-cream-100 px-2.5 py-1 rounded-full shadow-sm">Locals</span>
+      <span class="jump-dot w-2.5 h-2.5 rounded-full bg-tan-300"></span>
+    </a>
+    <a href="#about" data-target="about" class="jump-link flex items-center justify-end gap-3 group">
+      <span class="jump-label text-xs font-semibold uppercase tracking-wider text-ink bg-cream-100 px-2.5 py-1 rounded-full shadow-sm">Rachel</span>
+      <span class="jump-dot w-2.5 h-2.5 rounded-full bg-tan-300"></span>
+    </a>
+    <a href="#property" data-target="property" class="jump-link flex items-center justify-end gap-3 group">
+      <span class="jump-label text-xs font-semibold uppercase tracking-wider text-ink bg-cream-100 px-2.5 py-1 rounded-full shadow-sm">Property</span>
+      <span class="jump-dot w-2.5 h-2.5 rounded-full bg-tan-300"></span>
+    </a>
+    <a href="#gallery" data-target="gallery" class="jump-link flex items-center justify-end gap-3 group">
+      <span class="jump-label text-xs font-semibold uppercase tracking-wider text-ink bg-cream-100 px-2.5 py-1 rounded-full shadow-sm">Gallery</span>
+      <span class="jump-dot w-2.5 h-2.5 rounded-full bg-tan-300"></span>
+    </a>
+    <a href="#reserve" data-target="reserve" class="jump-link flex items-center justify-end gap-3 group">
+      <span class="jump-label text-xs font-semibold uppercase tracking-wider text-ink bg-cream-100 px-2.5 py-1 rounded-full shadow-sm">Reserve</span>
+      <span class="jump-dot w-2.5 h-2.5 rounded-full bg-tan-300"></span>
+    </a>
+  </nav>
+
+  <main id="home">
+    <!-- ============================= HERO ============================= -->
+    <section class="relative hero-bg min-h-screen flex items-center">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 py-32 w-full">
+        <div class="max-w-3xl">
+          <p class="reveal inline-flex items-center gap-2 text-cream-100 text-xs sm:text-sm font-semibold uppercase tracking-[0.3em] mb-6">
+            <span class="w-8 h-px bg-terracotta-200"></span>
+            Monroe, Washington
+          </p>
+          <h1 class="reveal font-serif text-4xl sm:text-6xl lg:text-7xl leading-[1.05] text-cream-50 mb-6">
+            2.5 Acres of Luxury<br />Cage-Free Care
+          </h1>
+          <p class="reveal text-lg sm:text-xl text-cream-100/90 max-w-xl mb-10 leading-relaxed">
+            A premium, boutique dog retreat where your pup roams, plays, and rests like family — never more than three guests at a time.
+          </p>
+          <div class="reveal flex flex-col sm:flex-row gap-4">
+            <a href="#reserve" class="inline-flex items-center justify-center rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-cream-50 font-semibold px-8 py-4 shadow-lg transition-colors">
+              Reserve a Stay
+            </a>
+            <a href="#property" class="inline-flex items-center justify-center rounded-full bg-cream-50/10 hover:bg-cream-50/20 backdrop-blur border border-cream-100/40 text-cream-50 font-semibold px-8 py-4 transition-colors">
+              Take a Tour
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll cue -->
+      <a href="#why" aria-label="Scroll down" class="absolute bottom-8 left-1/2 -translate-x-1/2 text-cream-100/80 hover:text-cream-50 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
+      </a>
+    </section>
+
+    <!-- ============================= WHY DOGS & OWNERS LOVE US ============================= -->
+    <section id="why" class="py-24 sm:py-32 bg-cream-50">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <p class="reveal divider-dot text-terracotta-500 text-xs font-semibold uppercase tracking-[0.3em] mb-5">Why Choose Us</p>
+          <h2 class="reveal font-serif text-3xl sm:text-5xl text-ink mb-5">Why Dogs &amp; Owners Love Us</h2>
+          <p class="reveal text-ink/70 text-lg leading-relaxed">More than boarding — a true retreat, thoughtfully designed around your dog's comfort and your peace of mind.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Card 1 -->
+          <div class="reveal bg-cream-100 rounded-3xl p-8 border border-cream-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <div class="w-14 h-14 rounded-2xl bg-terracotta-50 text-terracotta-500 flex items-center justify-center mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+            </div>
+            <h3 class="font-serif text-xl text-ink mb-3">Room to Roam &amp; Rest</h3>
+            <p class="text-ink/70 leading-relaxed text-[15px]">2.5 acres split into 3 fenced yards for safe daytime play. Dogs can come inside anytime to relax on couches, dog beds, or a kennel on request.</p>
+          </div>
+          <!-- Card 2 -->
+          <div class="reveal bg-cream-100 rounded-3xl p-8 border border-cream-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-300" style="transition-delay:.05s">
+            <div class="w-14 h-14 rounded-2xl bg-terracotta-50 text-terracotta-500 flex items-center justify-center mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+            </div>
+            <h3 class="font-serif text-xl text-ink mb-3">Daily Check-Ins</h3>
+            <p class="text-ink/70 leading-relaxed text-[15px]">Videos and updates every single day of the stay, so you can see exactly how your dog is doing while you're away.</p>
+          </div>
+          <!-- Card 3 -->
+          <div class="reveal bg-cream-100 rounded-3xl p-8 border border-cream-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-300" style="transition-delay:.1s">
+            <div class="w-14 h-14 rounded-2xl bg-terracotta-50 text-terracotta-500 flex items-center justify-center mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-1.13a4 4 0 10-4-4 4 4 0 004 4zm6 0a3 3 0 10-3-3" /></svg>
+            </div>
+            <h3 class="font-serif text-xl text-ink mb-3">Join the Pack</h3>
+            <p class="text-ink/70 leading-relaxed text-[15px]">With 4 friendly resident pups, your dog is bound to find a playmate during their stay — or enjoy their own quiet space if that's more their style.</p>
+          </div>
+          <!-- Card 4 -->
+          <div class="reveal bg-cream-100 rounded-3xl p-8 border border-cream-300 hover:shadow-xl hover:-translate-y-1 transition-all duration-300" style="transition-delay:.15s">
+            <div class="w-14 h-14 rounded-2xl bg-terracotta-50 text-terracotta-500 flex items-center justify-center mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+            </div>
+            <h3 class="font-serif text-xl text-ink mb-3">Focused Care</h3>
+            <p class="text-ink/70 leading-relaxed text-[15px]">We're a dog retreat, not a corporate boarding facility. We never host more than 3 guest dogs at a time, so yours always gets special attention and plenty of space.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= MEET THE LOCALS ============================= -->
+    <section id="locals" class="py-24 sm:py-32 bg-cream-100">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <p class="reveal divider-dot text-terracotta-500 text-xs font-semibold uppercase tracking-[0.3em] mb-5">The Welcoming Committee</p>
+          <h2 class="reveal font-serif text-3xl sm:text-5xl text-ink mb-5">Meet the Locals</h2>
+          <p class="reveal text-ink/70 text-lg leading-relaxed">Our four resident pups set the tone for every stay — warm, easygoing, and always happy to make a new friend.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Spring -->
+          <figure class="reveal group bg-cream-50 rounded-3xl overflow-hidden border border-cream-300 hover:shadow-xl transition-all duration-300">
+            <div class="aspect-[4/5] bg-tan-100 flex items-center justify-center overflow-hidden">
+              <!-- PHOTO SLOT: replace src with a photo of Spring -->
+              <img src="https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?auto=format&fit=crop&w=600&q=80" alt="Spring, resident dog" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            <figcaption class="p-6">
+              <h3 class="font-serif text-2xl text-ink mb-1">Spring</h3>
+              <p class="text-xs uppercase tracking-widest text-terracotta-500 font-semibold mb-3">The Elder Stateswoman</p>
+              <p class="text-ink/70 text-[15px] leading-relaxed">The oldest of the group, Spring is a silly girl who loves to relax on the deck and watch over her flock of chickens.</p>
+            </figcaption>
+          </figure>
+          <!-- Cannoli -->
+          <figure class="reveal group bg-cream-50 rounded-3xl overflow-hidden border border-cream-300 hover:shadow-xl transition-all duration-300" style="transition-delay:.05s">
+            <div class="aspect-[4/5] bg-tan-100 flex items-center justify-center overflow-hidden">
+              <!-- PHOTO SLOT: replace src with a photo of Cannoli -->
+              <img src="https://images.unsplash.com/photo-1568572933382-74d440642117?auto=format&fit=crop&w=600&q=80" alt="Cannoli, resident dog" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            <figcaption class="p-6">
+              <h3 class="font-serif text-2xl text-ink mb-1">Cannoli</h3>
+              <p class="text-xs uppercase tracking-widest text-terracotta-500 font-semibold mb-3">The Athlete</p>
+              <p class="text-ink/70 text-[15px] leading-relaxed">Cannoli is a passionate and athletic girl who shows her emotion with her big, unmistakable smile.</p>
+            </figcaption>
+          </figure>
+          <!-- Dobby -->
+          <figure class="reveal group bg-cream-50 rounded-3xl overflow-hidden border border-cream-300 hover:shadow-xl transition-all duration-300" style="transition-delay:.1s">
+            <div class="aspect-[4/5] bg-tan-100 flex items-center justify-center overflow-hidden">
+              <!-- PHOTO SLOT: replace src with a photo of Dobby -->
+              <img src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=600&q=80" alt="Dobby, resident dog" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            <figcaption class="p-6">
+              <h3 class="font-serif text-2xl text-ink mb-1">Dobby</h3>
+              <p class="text-xs uppercase tracking-widest text-terracotta-500 font-semibold mb-3">The Best Friend</p>
+              <p class="text-ink/70 text-[15px] leading-relaxed">The only boy of the bunch, Dobby is always eager to please and loves playtime with new friends.</p>
+            </figcaption>
+          </figure>
+          <!-- Mia -->
+          <figure class="reveal group bg-cream-50 rounded-3xl overflow-hidden border border-cream-300 hover:shadow-xl transition-all duration-300" style="transition-delay:.15s">
+            <div class="aspect-[4/5] bg-tan-100 flex items-center justify-center overflow-hidden">
+              <!-- PHOTO SLOT: replace src with a photo of Mia -->
+              <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=600&q=80" alt="Mia, resident dog" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            <figcaption class="p-6">
+              <h3 class="font-serif text-2xl text-ink mb-1">Mia</h3>
+              <p class="text-xs uppercase tracking-widest text-terracotta-500 font-semibold mb-3">The Social Butterfly</p>
+              <p class="text-ink/70 text-[15px] leading-relaxed">Mia has never met a dog she didn't get along with! If your dog needs a playmate during their stay, odds are Mia will be there.</p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= ABOUT RACHEL ============================= -->
+    <section id="about" class="py-24 sm:py-32 bg-cream-50">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <!-- Portrait -->
+          <div class="reveal order-1 lg:order-none">
+            <div class="relative">
+              <div class="aspect-[4/5] rounded-[2rem] overflow-hidden bg-tan-100 shadow-xl">
+                <!-- PHOTO SLOT: replace src with a portrait of Rachel -->
+                <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=800&q=80" alt="Rachel, owner of High Bridge Dog Retreat" class="w-full h-full object-cover" />
+              </div>
+              <div class="hidden sm:block absolute -bottom-6 -right-6 bg-terracotta-500 text-cream-50 rounded-2xl px-7 py-5 shadow-lg">
+                <span class="block font-serif text-3xl leading-none">60+</span>
+                <span class="block text-xs uppercase tracking-widest mt-1">Dogs fostered &amp; homed</span>
+              </div>
+            </div>
+          </div>
+          <!-- Bio -->
+          <div>
+            <p class="reveal text-terracotta-500 text-xs font-semibold uppercase tracking-[0.3em] mb-5">About Me</p>
+            <h2 class="reveal font-serif text-3xl sm:text-5xl text-ink mb-6">Hello, I'm Rachel</h2>
+            <div class="reveal space-y-4 text-ink/75 text-lg leading-relaxed">
+              <p>I'm the owner of High Bridge Dog Retreat. Dogs have always been my biggest passion, and over 10 years ago I started getting involved in local dog rescues around the area.</p>
+              <p>To date I've fostered and homed 60+ dogs, adopting several of those fosters along the way. Since moving to a farm where I can host more pups, I've expanded into pet sitting.</p>
+              <p>I have a background in pet care and love every dog for their unique personality. You can have confidence that your dog will not only be <span class="text-terracotta-600 font-semibold">safe</span> but come home <span class="text-terracotta-600 font-semibold">happy</span> under my care.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= THE PROPERTY ============================= -->
+    <section id="property" class="py-24 sm:py-32 bg-cream-100">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <p class="reveal divider-dot text-terracotta-500 text-xs font-semibold uppercase tracking-[0.3em] mb-5">Where They'll Stay</p>
+          <h2 class="reveal font-serif text-3xl sm:text-5xl text-ink mb-5">The Property</h2>
+          <p class="reveal text-ink/70 text-lg leading-relaxed">Wide-open acreage to run by day, and a warm, comfortable home to unwind in by night.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-8">
+          <!-- Outdoor -->
+          <div class="reveal bg-cream-50 rounded-[2rem] overflow-hidden border border-cream-300 shadow-sm">
+            <div class="aspect-[16/10] bg-tan-100 overflow-hidden">
+              <!-- PHOTO SLOT: replace with a photo of the outdoor space / yards -->
+              <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1000&q=80" alt="Outdoor space at the retreat" class="w-full h-full object-cover" />
+            </div>
+            <div class="p-8 sm:p-10">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="w-11 h-11 rounded-xl bg-terracotta-50 text-terracotta-500 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+                </span>
+                <h3 class="font-serif text-2xl text-ink">Outdoor Space</h3>
+              </div>
+              <p class="text-ink/70 leading-relaxed">A full 2.5 acres divided into 3 securely fenced yards, giving every guest room to run, sniff, and play safely — with space to separate pups when they'd prefer some quiet time of their own.</p>
+            </div>
+          </div>
+
+          <!-- Indoor -->
+          <div class="reveal bg-cream-50 rounded-[2rem] overflow-hidden border border-cream-300 shadow-sm" style="transition-delay:.08s">
+            <div class="aspect-[16/10] bg-tan-100 overflow-hidden">
+              <!-- PHOTO SLOT: replace with a photo of the indoor space / lower-level lounge -->
+              <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1000&q=80" alt="Indoor lounge space at the retreat" class="w-full h-full object-cover" />
+            </div>
+            <div class="p-8 sm:p-10">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="w-11 h-11 rounded-xl bg-terracotta-50 text-terracotta-500 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10v11m16-11v11" /></svg>
+                </span>
+                <h3 class="font-serif text-2xl text-ink">Indoor Space</h3>
+              </div>
+              <p class="text-ink/70 leading-relaxed">A true in-home experience: couches, cozy dog beds, and kennels on request. Our luxury lower-level lounge is set apart from the office and living quarters, giving guests a calm, dedicated space to truly settle in and rest.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= GALLERY ============================= -->
+    <section id="gallery" class="py-24 sm:py-32 bg-cream-50">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <p class="reveal divider-dot text-terracotta-500 text-xs font-semibold uppercase tracking-[0.3em] mb-5">Happy Tails</p>
+          <h2 class="reveal font-serif text-3xl sm:text-5xl text-ink mb-5">Gallery</h2>
+          <p class="reveal text-ink/70 text-lg leading-relaxed">A look at some of our past guests enjoying their stay. Add your own favorites here anytime.</p>
+        </div>
+
+        <!-- PHOTO SLOTS: replace each src with a real guest photo -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+          <div class="reveal aspect-square rounded-2xl overflow-hidden bg-tan-100 group">
+            <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=500&q=80" alt="Guest dog having fun" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="reveal aspect-square rounded-2xl overflow-hidden bg-tan-100 group" style="transition-delay:.05s">
+            <img src="https://images.unsplash.com/photo-1477884213360-7e9d7dcc1e48?auto=format&fit=crop&w=500&q=80" alt="Guest dog having fun" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="reveal aspect-square rounded-2xl overflow-hidden bg-tan-100 group" style="transition-delay:.1s">
+            <img src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=500&q=80" alt="Guest dog having fun" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="reveal aspect-square rounded-2xl overflow-hidden bg-tan-100 group" style="transition-delay:.15s">
+            <img src="https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=500&q=80" alt="Guest dog having fun" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="reveal aspect-square rounded-2xl overflow-hidden bg-tan-100 group">
+            <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=500&q=80" alt="Guest dog having fun" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="reveal aspect-square rounded-2xl overflow-hidden bg-tan-100 group" style="transition-delay:.05s">
+            <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=500&q=80" alt="Guest dog having fun" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="reveal aspect-square rounded-2xl overflow-hidden bg-tan-100 group" style="transition-delay:.1s">
+            <img src="https://images.unsplash.com/photo-1477884213360-7e9d7dcc1e48?auto=format&fit=crop&w=500&q=80" alt="Guest dog having fun" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="reveal aspect-square rounded-2xl overflow-hidden bg-tan-100 group" style="transition-delay:.15s">
+            <img src="https://images.unsplash.com/photo-1425082661705-1834bfd09dca?auto=format&fit=crop&w=500&q=80" alt="Guest dog having fun" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= PRICING & RESERVE ============================= -->
+    <section id="reserve" class="py-24 sm:py-32 bg-cream-100">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <p class="reveal divider-dot text-terracotta-500 text-xs font-semibold uppercase tracking-[0.3em] mb-5">Transparent Pricing</p>
+          <h2 class="reveal font-serif text-3xl sm:text-5xl text-ink mb-5">Reserve Your Stay</h2>
+          <p class="reveal text-ink/70 text-lg leading-relaxed">Simple, honest rates with no hidden fees. Tell us about your pup and we'll be in touch to confirm the details.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-5 gap-8 lg:gap-10 items-start">
+          <!-- Pricing card -->
+          <div class="reveal lg:col-span-2">
+            <div class="bg-ink text-cream-50 rounded-[2rem] p-8 sm:p-10 shadow-xl lg:sticky lg:top-28">
+              <h3 class="font-serif text-2xl mb-1">Our Rates</h3>
+              <p class="text-cream-100/60 text-sm mb-8">Per night, per dog</p>
+
+              <div class="space-y-6">
+                <div class="flex items-end justify-between border-b border-cream-100/15 pb-5">
+                  <div>
+                    <p class="font-semibold text-cream-50">First Dog</p>
+                    <p class="text-cream-100/60 text-sm">Weekday</p>
+                  </div>
+                  <p class="font-serif text-3xl text-terracotta-200">$85</p>
+                </div>
+                <div class="flex items-end justify-between border-b border-cream-100/15 pb-5">
+                  <div>
+                    <p class="font-semibold text-cream-50">First Dog</p>
+                    <p class="text-cream-100/60 text-sm">Weekend</p>
+                  </div>
+                  <p class="font-serif text-3xl text-terracotta-200">$90</p>
+                </div>
+                <div class="flex items-end justify-between border-b border-cream-100/15 pb-5">
+                  <div>
+                    <p class="font-semibold text-cream-50">Each Additional Dog</p>
+                    <p class="text-cream-100/60 text-sm">Weekday</p>
+                  </div>
+                  <p class="font-serif text-3xl text-terracotta-200">$75</p>
+                </div>
+                <div class="flex items-end justify-between">
+                  <div>
+                    <p class="font-semibold text-cream-50">Each Additional Dog</p>
+                    <p class="text-cream-100/60 text-sm">Weekend</p>
+                  </div>
+                  <p class="font-serif text-3xl text-terracotta-200">$80</p>
+                </div>
+              </div>
+
+              <div class="mt-8 flex items-start gap-3 bg-cream-50/10 rounded-2xl p-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-terracotta-200 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                <p class="text-sm text-cream-100/80">Bringing more than one pup? Additional dogs enjoy a <span class="text-cream-50 font-semibold">$10/day discount</span> off the nightly rate.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Intake form -->
+          <div class="reveal lg:col-span-3">
+            <form id="intake-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="bg-cream-50 rounded-[2rem] p-8 sm:p-10 border border-cream-300 shadow-sm">
+              <!-- NOTE: Replace YOUR_FORM_ID above with your real Formspree form ID to receive submissions. -->
+              <h3 class="font-serif text-2xl text-ink mb-1">Client &amp; Dog Intake</h3>
+              <p class="text-ink/60 text-sm mb-8">Fields marked <span class="text-terracotta-500">*</span> are required.</p>
+
+              <!-- Owner details -->
+              <p class="text-xs font-semibold uppercase tracking-widest text-terracotta-500 mb-4">Your Details</p>
+              <div class="grid sm:grid-cols-2 gap-5 mb-8">
+                <div>
+                  <label for="owner-name" class="block text-sm font-semibold text-ink mb-2">Your Name <span class="text-terracotta-500">*</span></label>
+                  <input required type="text" id="owner-name" name="owner_name" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" placeholder="Jane Doe" />
+                </div>
+                <div>
+                  <label for="owner-email" class="block text-sm font-semibold text-ink mb-2">Email <span class="text-terracotta-500">*</span></label>
+                  <input required type="email" id="owner-email" name="email" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" placeholder="you@email.com" />
+                </div>
+                <div>
+                  <label for="owner-phone" class="block text-sm font-semibold text-ink mb-2">Phone <span class="text-terracotta-500">*</span></label>
+                  <input required type="tel" id="owner-phone" name="phone" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" placeholder="(555) 555-5555" />
+                </div>
+                <div>
+                  <label for="emergency-contact" class="block text-sm font-semibold text-ink mb-2">Emergency Contact</label>
+                  <input type="text" id="emergency-contact" name="emergency_contact" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" placeholder="Name & phone" />
+                </div>
+              </div>
+
+              <!-- Stay details -->
+              <p class="text-xs font-semibold uppercase tracking-widest text-terracotta-500 mb-4">The Stay</p>
+              <div class="grid sm:grid-cols-2 gap-5 mb-8">
+                <div>
+                  <label for="check-in" class="block text-sm font-semibold text-ink mb-2">Requested Drop-Off</label>
+                  <input type="date" id="check-in" name="check_in" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" />
+                </div>
+                <div>
+                  <label for="check-out" class="block text-sm font-semibold text-ink mb-2">Requested Pick-Up</label>
+                  <input type="date" id="check-out" name="check_out" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" />
+                </div>
+              </div>
+
+              <!-- Dog details -->
+              <p class="text-xs font-semibold uppercase tracking-widest text-terracotta-500 mb-4">About Your Dog</p>
+              <div class="grid sm:grid-cols-2 gap-5 mb-5">
+                <div>
+                  <label for="dog-name" class="block text-sm font-semibold text-ink mb-2">Dog's Name <span class="text-terracotta-500">*</span></label>
+                  <input required type="text" id="dog-name" name="dog_name" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" placeholder="Buddy" />
+                </div>
+                <div>
+                  <label for="dog-breed" class="block text-sm font-semibold text-ink mb-2">Breed <span class="text-terracotta-500">*</span></label>
+                  <input required type="text" id="dog-breed" name="breed" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" placeholder="Golden Retriever" />
+                </div>
+                <div>
+                  <label for="dog-age" class="block text-sm font-semibold text-ink mb-2">Age</label>
+                  <input type="text" id="dog-age" name="age" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" placeholder="3 years" />
+                </div>
+                <div>
+                  <label for="spay-neuter" class="block text-sm font-semibold text-ink mb-2">Spayed / Neutered?</label>
+                  <select id="spay-neuter" name="spay_neuter" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition">
+                    <option value="">Select…</option>
+                    <option>Yes</option>
+                    <option>No</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="mb-5">
+                <label for="vaccination" class="block text-sm font-semibold text-ink mb-2">Vaccination Status <span class="text-terracotta-500">*</span></label>
+                <select required id="vaccination" name="vaccination_status" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition">
+                  <option value="">Select…</option>
+                  <option>Up to date on all vaccinations</option>
+                  <option>Partially vaccinated</option>
+                  <option>Not vaccinated / unsure</option>
+                </select>
+              </div>
+
+              <div class="mb-5">
+                <label for="temperament" class="block text-sm font-semibold text-ink mb-2">Temperament &amp; Safety Notes <span class="text-terracotta-500">*</span></label>
+                <textarea required id="temperament" name="temperament_safety" rows="3" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" placeholder="How does your dog do with other dogs and people? Any reactivity, resource guarding, escape/jumping tendencies, or triggers we should know about?"></textarea>
+              </div>
+
+              <div class="mb-8">
+                <label for="medical" class="block text-sm font-semibold text-ink mb-2">Medical Needs, Medications &amp; Feeding</label>
+                <textarea id="medical" name="medical_feeding" rows="3" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" placeholder="Allergies, medications & schedule, feeding routine, vet name & phone, or anything else that helps us care for your pup."></textarea>
+              </div>
+
+              <button type="submit" class="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-cream-50 font-semibold px-8 py-4 shadow-sm transition-colors">
+                Request Reservation
+              </button>
+
+              <!-- Feedback messages -->
+              <p id="form-success" class="hidden mt-5 rounded-xl bg-green-50 border border-green-200 text-green-800 px-4 py-3 text-sm">
+                🐾 Thank you! Your reservation request has been sent — we'll be in touch soon to confirm the details.
+              </p>
+              <p id="form-error" class="hidden mt-5 rounded-xl bg-red-50 border border-red-200 text-red-800 px-4 py-3 text-sm">
+                Something went wrong sending your request. Please try again, or reach us directly at the number below.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================= FOOTER ============================= -->
+  <footer class="bg-ink text-cream-100 pt-20 pb-10">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-14 border-b border-cream-100/15">
+        <!-- Brand -->
+        <div class="sm:col-span-2 lg:col-span-1">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-terracotta-500 text-cream-50 font-serif text-lg">HB</span>
+            <span class="leading-tight">
+              <span class="block font-serif text-lg text-cream-50">High Bridge</span>
+              <span class="block text-[10px] tracking-[0.25em] uppercase text-tan-300">Dog Retreat</span>
+            </span>
+          </div>
+          <p class="text-cream-100/60 text-sm leading-relaxed max-w-xs">Premium, boutique, cage-free dog boarding on 2.5 acres in Monroe, Washington.</p>
+        </div>
+
+        <!-- Explore -->
+        <div>
+          <h4 class="font-semibold text-cream-50 mb-5">Explore</h4>
+          <ul class="space-y-3 text-sm text-cream-100/70">
+            <li><a href="#why" class="hover:text-terracotta-200 transition-colors">Why Us</a></li>
+            <li><a href="#locals" class="hover:text-terracotta-200 transition-colors">Meet the Locals</a></li>
+            <li><a href="#about" class="hover:text-terracotta-200 transition-colors">About Rachel</a></li>
+            <li><a href="#property" class="hover:text-terracotta-200 transition-colors">The Property</a></li>
+            <li><a href="#reserve" class="hover:text-terracotta-200 transition-colors">Pricing &amp; Reserve</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact (PLACEHOLDER — replace with real details) -->
+        <div>
+          <h4 class="font-semibold text-cream-50 mb-5">Get in Touch</h4>
+          <ul class="space-y-3 text-sm text-cream-100/70">
+            <li class="flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-terracotta-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+              <a href="tel:+10000000000" class="hover:text-terracotta-200 transition-colors">(000) 000-0000</a>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-terracotta-300 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+              <a href="mailto:hello@highbridgedogretreat.com" class="hover:text-terracotta-200 transition-colors">hello@highbridgedogretreat.com</a>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-terracotta-300 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+              <span>Monroe, WA<br /><span class="text-cream-100/40 text-xs">Full address shared upon booking</span></span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Hours (PLACEHOLDER) -->
+        <div>
+          <h4 class="font-semibold text-cream-50 mb-5">Drop-Off &amp; Pick-Up</h4>
+          <ul class="space-y-2 text-sm text-cream-100/70">
+            <li class="flex justify-between gap-4"><span>Mon – Fri</span><span class="text-cream-100/50">8am – 6pm</span></li>
+            <li class="flex justify-between gap-4"><span>Saturday</span><span class="text-cream-100/50">9am – 5pm</span></li>
+            <li class="flex justify-between gap-4"><span>Sunday</span><span class="text-cream-100/50">By appointment</span></li>
+          </ul>
+          <div class="flex gap-3 mt-6">
+            <!-- Social placeholders -->
+            <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full bg-cream-50/10 hover:bg-terracotta-500 flex items-center justify-center transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 01-1.38-.9 3.7 3.7 0 01-.9-1.38c-.16-.43-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 1.44c-3.14 0-3.51.01-4.75.07-1.15.05-1.77.24-2.19.4-.55.21-.94.47-1.35.88-.41.41-.67.8-.88 1.35-.16.42-.35 1.04-.4 2.19-.06 1.24-.07 1.61-.07 4.75s.01 3.51.07 4.75c.05 1.15.24 1.77.4 2.19.21.55.47.94.88 1.35.41.41.8.67 1.35.88.42.16 1.04.35 2.19.4 1.24.06 1.61.07 4.75.07s3.51-.01 4.75-.07c1.15-.05 1.77-.24 2.19-.4.55-.21.94-.47 1.35-.88.41-.41.67-.8.88-1.35.16-.42.35-1.04.4-2.19.06-1.24.07-1.61.07-4.75s-.01-3.51-.07-4.75c-.05-1.15-.24-1.77-.4-2.19a3.6 3.6 0 00-.88-1.35 3.6 3.6 0 00-1.35-.88c-.42-.16-1.04-.35-2.19-.4-1.24-.06-1.61-.07-4.75-.07zm0 2.45a5.95 5.95 0 110 11.9 5.95 5.95 0 010-11.9zm0 9.81a3.86 3.86 0 100-7.72 3.86 3.86 0 000 7.72zm7.58-10.05a1.39 1.39 0 11-2.78 0 1.39 1.39 0 012.78 0z"/></svg>
+            </a>
+            <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full bg-cream-50/10 hover:bg-terracotta-500 flex items-center justify-center transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0022 12z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-cream-100/50">
+        <p>&copy; <span id="year"></span> High Bridge Dog Retreat. All rights reserved.</p>
+        <p>Boutique cage-free boarding · Monroe, WA</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================= SCRIPT ============================= -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* ---- Current year ---- */
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      /* ---- Sticky nav: solid background + shadow on scroll ---- */
+      var nav = document.getElementById('site-nav');
+      function onScroll() {
+        if (window.scrollY > 20) {
+          nav.classList.add('bg-cream-100/95', 'backdrop-blur', 'shadow-sm');
+        } else {
+          nav.classList.remove('bg-cream-100/95', 'backdrop-blur', 'shadow-sm');
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      /* ---- Mobile menu toggle ---- */
+      var toggle = document.getElementById('menu-toggle');
+      var mobileMenu = document.getElementById('mobile-menu');
+      var iconOpen = document.getElementById('icon-open');
+      var iconClose = document.getElementById('icon-close');
+      function closeMenu() {
+        mobileMenu.classList.add('hidden');
+        iconOpen.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+      toggle.addEventListener('click', function () {
+        var isHidden = mobileMenu.classList.toggle('hidden');
+        iconOpen.classList.toggle('hidden', !isHidden);
+        iconClose.classList.toggle('hidden', isHidden);
+        toggle.setAttribute('aria-expanded', String(!isHidden));
+      });
+      document.querySelectorAll('.mobile-link').forEach(function (link) {
+        link.addEventListener('click', closeMenu);
+      });
+
+      /* ---- Reveal-on-scroll ---- */
+      var revealEls = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        var revealObserver = new IntersectionObserver(function (entries, obs) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(function (el) { revealObserver.observe(el); });
+      } else {
+        revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+      }
+
+      /* ---- Floating jump menu: active section highlighting ---- */
+      var jumpLinks = document.querySelectorAll('.jump-link');
+      var sections = [];
+      jumpLinks.forEach(function (link) {
+        var id = link.getAttribute('data-target');
+        var section = document.getElementById(id);
+        if (section) sections.push(section);
+      });
+      if ('IntersectionObserver' in window && sections.length) {
+        // Activate whichever section currently crosses the viewport's vertical center.
+        // This is height-independent, so tall sections (pricing/form) track correctly.
+        var sectionObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              jumpLinks.forEach(function (l) {
+                l.classList.toggle('active', l.getAttribute('data-target') === entry.target.id);
+              });
+            }
+          });
+        }, { rootMargin: '-50% 0px -50% 0px', threshold: 0 });
+        sections.forEach(function (s) { sectionObserver.observe(s); });
+      }
+
+      /* ---- Formspree submit handler (AJAX) ---- */
+      var form = document.getElementById('intake-form');
+      var successMsg = document.getElementById('form-success');
+      var errorMsg = document.getElementById('form-error');
+      form.addEventListener('submit', function (e) {
+        // Native validation handles required fields first.
+        if (!form.checkValidity()) return;
+
+        e.preventDefault();
+        successMsg.classList.add('hidden');
+        errorMsg.classList.add('hidden');
+
+        var action = form.getAttribute('action') || '';
+        // If the Formspree ID hasn't been set yet, show a friendly success state anyway.
+        if (action.indexOf('YOUR_FORM_ID') !== -1) {
+          successMsg.classList.remove('hidden');
+          form.reset();
+          successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          return;
+        }
+
+        var data = new FormData(form);
+        fetch(action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        }).then(function (response) {
+          if (response.ok) {
+            successMsg.classList.remove('hidden');
+            form.reset();
+            successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          } else {
+            errorMsg.classList.remove('hidden');
+          }
+        }).catch(function () {
+          errorMsg.classList.remove('hidden');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
