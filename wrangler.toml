@@ -1,0 +1,7 @@
+name = "rachel-website"
+compatibility_date = "2024-12-01"
+
+# Serve the repository as a static site (no server-side code).
+# index.html and the images/ folder are uploaded as static assets.
+[assets]
+directory = "./"
