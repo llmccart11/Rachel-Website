@@ -544,52 +544,43 @@
     <!-- ============================= PRICING & RESERVE ============================= -->
     <section id="reserve" class="py-14 sm:py-20 bg-cream-100">
       <div class="max-w-7xl mx-auto px-5 sm:px-8">
-        <div class="text-center max-w-2xl mx-auto mb-16">
+        <div class="text-center max-w-2xl mx-auto mb-10">
           <h2 class="reveal font-serif text-3xl sm:text-5xl text-ink mb-5">Reserve Your Stay</h2>
           <p class="reveal text-ink/70 text-lg leading-relaxed">Simple, honest rates with no hidden fees. Tell us about your pup and we'll be in touch to confirm the details.</p>
         </div>
 
-        <div class="grid lg:grid-cols-5 gap-8 lg:gap-10 items-start">
-          <!-- Pricing card -->
-          <div class="reveal lg:col-span-2">
-            <div class="bg-ink text-cream-50 rounded-[2rem] p-8 sm:p-10 shadow-xl lg:sticky lg:top-28">
-              <h3 class="font-serif text-2xl mb-1">Nightly Rates</h3>
-              <p class="text-cream-100/60 text-sm mb-4">Per dog</p>
-
-              <!-- Rows: First dog / Each additional dog · Columns: Weekday / Weekend -->
+        <div class="max-w-4xl mx-auto">
+          <!-- Pricing banner (compact, full width) -->
+          <div class="reveal bg-ink text-cream-50 rounded-[2rem] px-6 py-6 sm:px-9 sm:py-7 shadow-xl mb-8">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
               <div>
-                <!-- Column headers -->
-                <div class="grid grid-cols-[1.6fr_1fr_1fr] items-end pb-3 border-b border-cream-100/15">
-                  <span></span>
-                  <span class="text-center text-xs font-semibold uppercase tracking-[0.15em] text-terracotta-200">Weekday</span>
-                  <span class="text-center text-xs font-semibold uppercase tracking-[0.15em] text-terracotta-200">Weekend</span>
-                </div>
-                <!-- First dog -->
-                <div class="grid grid-cols-[1.6fr_1fr_1fr] items-center py-4 border-b border-cream-100/15">
-                  <span class="font-semibold text-cream-50">First dog</span>
-                  <span class="text-center font-sans font-bold text-2xl tabular-nums text-cream-50">$85</span>
-                  <span class="text-center font-sans font-bold text-2xl tabular-nums text-cream-50">$90</span>
-                </div>
-                <!-- Each additional dog -->
-                <div class="grid grid-cols-[1.6fr_1fr_1fr] items-center pt-4">
-                  <span class="font-semibold text-cream-50">Each additional dog</span>
-                  <span class="text-center font-sans font-bold text-2xl tabular-nums text-terracotta-200">$75</span>
-                  <span class="text-center font-sans font-bold text-2xl tabular-nums text-terracotta-200">$80</span>
-                </div>
+                <h3 class="font-serif text-2xl leading-tight">Nightly Rates</h3>
+                <p class="text-cream-100/60 text-sm">Per dog</p>
+              </div>
+              <div class="grid grid-cols-[auto_auto_auto] gap-x-7 sm:gap-x-10 gap-y-1.5 items-center">
+                <span></span>
+                <span class="text-center text-xs font-semibold uppercase tracking-[0.15em] text-terracotta-200">Weekday</span>
+                <span class="text-center text-xs font-semibold uppercase tracking-[0.15em] text-terracotta-200">Weekend</span>
+                <span class="font-semibold text-cream-50 pr-2">First dog</span>
+                <span class="text-center font-sans font-bold text-2xl tabular-nums text-cream-50">$85</span>
+                <span class="text-center font-sans font-bold text-2xl tabular-nums text-cream-50">$90</span>
+                <span class="font-semibold text-cream-50 pr-2">Each additional</span>
+                <span class="text-center font-sans font-bold text-2xl tabular-nums text-terracotta-200">$75</span>
+                <span class="text-center font-sans font-bold text-2xl tabular-nums text-terracotta-200">$80</span>
               </div>
             </div>
           </div>
 
           <!-- Intake form -->
-          <div class="reveal lg:col-span-3">
+          <div class="reveal">
             <form id="intake-form" action="https://formspree.io/f/xykrkpjp" method="POST" class="bg-cream-50 rounded-[2rem] p-8 sm:p-10 border border-cream-300 shadow-sm">
               <!-- Submissions are delivered via Formspree (form id xykrkpjp). -->
               <h3 class="font-serif text-2xl text-ink mb-1">Client &amp; Dog Intake</h3>
-              <p class="text-ink/60 text-sm mb-8">Fields marked <span class="text-terracotta-500">*</span> are required.</p>
+              <p class="text-ink/60 text-sm mb-6">Fields marked <span class="text-terracotta-500">*</span> are required.</p>
 
               <!-- Owner details -->
-              <p class="text-xs font-semibold uppercase tracking-widest text-terracotta-500 mb-4">Your Details</p>
-              <div class="grid sm:grid-cols-2 gap-5 mb-8">
+              <p class="text-xs font-semibold uppercase tracking-widest text-terracotta-500 mb-3">Your Details</p>
+              <div class="grid sm:grid-cols-2 gap-4 mb-6">
                 <div>
                   <label for="owner-name" class="block text-sm font-semibold text-ink mb-2">Your Name <span class="text-terracotta-500">*</span></label>
                   <input required type="text" id="owner-name" name="owner_name" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" placeholder="Jane Doe" />
@@ -609,15 +600,15 @@
               </div>
 
               <!-- Stay details -->
-              <p class="text-xs font-semibold uppercase tracking-widest text-terracotta-500 mb-4">The Stay</p>
-              <div class="mb-8">
+              <p class="text-xs font-semibold uppercase tracking-widest text-terracotta-500 mb-3">The Stay</p>
+              <div class="mb-6">
                 <label for="stay-dates" class="block text-sm font-semibold text-ink mb-2">Requested Dates <span class="text-ink/50 font-normal">(drop-off &amp; pick-up)</span></label>
                 <input type="text" id="stay-dates" name="stay_dates" readonly placeholder="Select drop-off and pick-up dates" class="w-full cursor-pointer rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" />
               </div>
 
               <!-- Dog details -->
-              <p class="text-xs font-semibold uppercase tracking-widest text-terracotta-500 mb-4">About Your Dog</p>
-              <div class="grid sm:grid-cols-2 gap-5 mb-5">
+              <p class="text-xs font-semibold uppercase tracking-widest text-terracotta-500 mb-3">About Your Dog</p>
+              <div class="grid sm:grid-cols-2 gap-4 mb-4">
                 <div>
                   <label for="dog-name" class="block text-sm font-semibold text-ink mb-2">Dog's Name <span class="text-terracotta-500">*</span></label>
                   <input required type="text" id="dog-name" name="dog_name" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" placeholder="Buddy" />
@@ -655,7 +646,7 @@
                 <textarea required id="temperament" name="temperament_safety" rows="3" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" placeholder="How does your dog do with other dogs and people? Any reactivity, resource guarding, escape/jumping tendencies, or triggers we should know about?"></textarea>
               </div>
 
-              <div class="mb-8">
+              <div class="mb-6">
                 <label for="medical" class="block text-sm font-semibold text-ink mb-2">Medical Needs, Medications &amp; Feeding</label>
                 <textarea id="medical" name="medical_feeding" rows="3" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" placeholder="Allergies, medications & schedule, feeding routine, vet name & phone, or anything else that helps us care for your pup."></textarea>
               </div>
