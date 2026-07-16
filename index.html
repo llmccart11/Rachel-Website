@@ -26,6 +26,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
 
+  <!-- flatpickr date-range picker -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css" />
+
   <script>
     tailwind.config = {
       theme: {
@@ -149,6 +152,29 @@
       vertical-align: middle;
       margin: 0 14px;
     }
+
+    /* flatpickr date-range picker — terracotta theme to match the site */
+    .flatpickr-day.selected,
+    .flatpickr-day.startRange,
+    .flatpickr-day.endRange,
+    .flatpickr-day.selected:hover,
+    .flatpickr-day.startRange:hover,
+    .flatpickr-day.endRange:hover {
+      background: #A85A38;
+      border-color: #A85A38;
+    }
+    .flatpickr-day.inRange {
+      background: #F3D9CB;
+      border-color: #F3D9CB;
+      box-shadow: -5px 0 0 #F3D9CB, 5px 0 0 #F3D9CB;
+    }
+    .flatpickr-day.today { border-color: #C1714B; }
+    .flatpickr-day.selected.startRange + .endRange:not(:nth-child(7n+1)),
+    .flatpickr-day.startRange.startRange + .endRange:not(:nth-child(7n+1)) {
+      box-shadow: -10px 0 0 #A85A38;
+    }
+    span.flatpickr-weekday { color: #A85A38; }
+    .flatpickr-months .flatpickr-month, .flatpickr-current-month { color: #3B2E25; }
   </style>
 </head>
 
@@ -584,15 +610,9 @@
 
               <!-- Stay details -->
               <p class="text-xs font-semibold uppercase tracking-widest text-terracotta-500 mb-4">The Stay</p>
-              <div class="grid sm:grid-cols-2 gap-5 mb-8">
-                <div>
-                  <label for="check-in" class="block text-sm font-semibold text-ink mb-2">Requested Drop-Off</label>
-                  <input type="date" id="check-in" name="check_in" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" />
-                </div>
-                <div>
-                  <label for="check-out" class="block text-sm font-semibold text-ink mb-2">Requested Pick-Up</label>
-                  <input type="date" id="check-out" name="check_out" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" />
-                </div>
+              <div class="mb-8">
+                <label for="stay-dates" class="block text-sm font-semibold text-ink mb-2">Requested Dates <span class="text-ink/50 font-normal">(drop-off &amp; pick-up)</span></label>
+                <input type="text" id="stay-dates" name="stay_dates" readonly placeholder="Select drop-off and pick-up dates" class="w-full cursor-pointer rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" />
               </div>
 
               <!-- Dog details -->
@@ -717,12 +737,24 @@
   </footer>
 
   <!-- ============================= SCRIPT ============================= -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.js"></script>
   <script>
     (function () {
       'use strict';
 
       /* ---- Current year ---- */
       document.getElementById('year').textContent = new Date().getFullYear();
+
+      /* ---- Date-range picker for drop-off / pick-up ---- */
+      var stayInput = document.getElementById('stay-dates');
+      if (stayInput && window.flatpickr) {
+        flatpickr(stayInput, {
+          mode: 'range',
+          minDate: 'today',
+          dateFormat: 'M j, Y',
+          disableMobile: true // use the range calendar on mobile too (native can't do ranges)
+        });
+      }
 
       /* ---- Sticky nav: solid background + shadow on scroll ---- */
       var nav = document.getElementById('site-nav');
