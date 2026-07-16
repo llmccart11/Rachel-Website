@@ -196,8 +196,8 @@
       <div class="hidden lg:flex items-center gap-8 text-sm font-semibold">
         <a href="#why" class="nav-link">Why Us</a>
         <a href="#locals" class="nav-link">Meet the Locals</a>
-        <a href="#about" class="nav-link">About Us</a>
         <a href="#property" class="nav-link">The Property</a>
+        <a href="#about" class="nav-link">About Us</a>
         <a href="#gallery" class="nav-link">Gallery</a>
         <a href="#reserve" class="inline-flex items-center rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-cream-50 px-5 py-2.5 shadow-sm transition-colors">Reserve a Stay</a>
       </div>
@@ -214,8 +214,8 @@
       <div class="px-6 py-5 flex flex-col gap-1 text-base font-semibold text-ink">
         <a href="#why" class="mobile-link py-3 border-b border-cream-300 hover:text-terracotta-500">Why Us</a>
         <a href="#locals" class="mobile-link py-3 border-b border-cream-300 hover:text-terracotta-500">Meet the Locals</a>
-        <a href="#about" class="mobile-link py-3 border-b border-cream-300 hover:text-terracotta-500">About Us</a>
         <a href="#property" class="mobile-link py-3 border-b border-cream-300 hover:text-terracotta-500">The Property</a>
+        <a href="#about" class="mobile-link py-3 border-b border-cream-300 hover:text-terracotta-500">About Us</a>
         <a href="#gallery" class="mobile-link py-3 border-b border-cream-300 hover:text-terracotta-500">Gallery</a>
         <a href="#reserve" class="mobile-link mt-3 text-center rounded-full bg-terracotta-500 text-cream-50 px-5 py-3">Reserve a Stay</a>
       </div>
@@ -236,12 +236,12 @@
       <span class="jump-label text-xs font-semibold uppercase tracking-wider text-ink bg-cream-100 px-2.5 py-1 rounded-full shadow-sm">Locals</span>
       <span class="jump-dot w-2.5 h-2.5 rounded-full bg-tan-300"></span>
     </a>
-    <a href="#about" data-target="about" class="jump-link flex items-center justify-end gap-3 group">
-      <span class="jump-label text-xs font-semibold uppercase tracking-wider text-ink bg-cream-100 px-2.5 py-1 rounded-full shadow-sm">About Us</span>
-      <span class="jump-dot w-2.5 h-2.5 rounded-full bg-tan-300"></span>
-    </a>
     <a href="#property" data-target="property" class="jump-link flex items-center justify-end gap-3 group">
       <span class="jump-label text-xs font-semibold uppercase tracking-wider text-ink bg-cream-100 px-2.5 py-1 rounded-full shadow-sm">Property</span>
+      <span class="jump-dot w-2.5 h-2.5 rounded-full bg-tan-300"></span>
+    </a>
+    <a href="#about" data-target="about" class="jump-link flex items-center justify-end gap-3 group">
+      <span class="jump-label text-xs font-semibold uppercase tracking-wider text-ink bg-cream-100 px-2.5 py-1 rounded-full shadow-sm">About Us</span>
       <span class="jump-dot w-2.5 h-2.5 rounded-full bg-tan-300"></span>
     </a>
     <a href="#gallery" data-target="gallery" class="jump-link flex items-center justify-end gap-3 group">
@@ -409,36 +409,6 @@
       </div>
     </section>
 
-    <!-- ============================= ABOUT RACHEL ============================= -->
-    <section id="about" class="py-12 sm:py-16 bg-cream-50">
-      <div class="max-w-5xl mx-auto px-5 sm:px-8">
-        <div class="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center">
-          <!-- Portrait -->
-          <div class="reveal order-1 lg:order-none lg:col-span-2">
-            <div class="relative max-w-[16rem] mx-auto lg:max-w-none">
-              <div class="aspect-[4/5] rounded-3xl overflow-hidden bg-tan-100 shadow-xl">
-                <!-- PHOTO: upload images/rachel.jpg (portrait works best) -->
-                <img src="images/rachel.jpg" onerror="this.style.display='none'" alt="Rachel, owner of High Bridge Dog Retreat" class="w-full h-full object-cover" />
-              </div>
-              <div class="hidden sm:block absolute -bottom-4 -right-4 bg-terracotta-500 text-cream-50 rounded-2xl px-5 py-3.5 shadow-lg">
-                <span class="block font-serif text-2xl leading-none">60+</span>
-                <span class="block text-[10px] uppercase tracking-widest mt-0.5">Dogs fostered &amp; homed</span>
-              </div>
-            </div>
-          </div>
-          <!-- Bio -->
-          <div class="lg:col-span-3">
-            <h2 class="reveal font-serif text-3xl sm:text-4xl text-ink mb-4">Hello, I'm Rachel</h2>
-            <div class="reveal space-y-3 text-ink/75 leading-relaxed">
-              <p>I'm the owner of High Bridge Dog Retreat. Dogs have always been my biggest passion, and over 10 years ago I started getting involved in local dog rescues around the area.</p>
-              <p>To date I've fostered and homed 60+ dogs, adopting several of those fosters along the way. Since moving to a farm where I can host more pups, I've expanded into pet sitting.</p>
-              <p>I have a background in pet care and love every dog for their unique personality. You can have confidence that your dog will not only be <span class="text-terracotta-600 font-semibold">safe</span> but come home <span class="text-terracotta-600 font-semibold">happy</span> under my care.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ============================= THE PROPERTY ============================= -->
     <section id="property" class="py-14 sm:py-20 bg-cream-100">
       <div class="max-w-7xl mx-auto px-5 sm:px-8">
@@ -489,6 +459,36 @@
                 <h3 class="font-serif text-2xl text-ink">Indoor Space</h3>
               </div>
               <p class="text-ink/70 leading-relaxed">A true in-home experience: couches, cozy dog beds, and kennels on request. Our luxury lower-level lounge is set apart from the office and living quarters, giving guests a calm, dedicated space to truly settle in and rest.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= ABOUT RACHEL ============================= -->
+    <section id="about" class="py-12 sm:py-16 bg-cream-50">
+      <div class="max-w-5xl mx-auto px-5 sm:px-8">
+        <div class="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center">
+          <!-- Portrait -->
+          <div class="reveal order-1 lg:order-none lg:col-span-2">
+            <div class="relative max-w-[16rem] mx-auto lg:max-w-none">
+              <div class="aspect-[4/5] rounded-3xl overflow-hidden bg-tan-100 shadow-xl">
+                <!-- PHOTO: upload images/rachel.jpg (portrait works best) -->
+                <img src="images/rachel.jpg" onerror="this.style.display='none'" alt="Rachel, owner of High Bridge Dog Retreat" class="w-full h-full object-cover" />
+              </div>
+              <div class="hidden sm:block absolute -bottom-4 -right-4 bg-terracotta-500 text-cream-50 rounded-2xl px-5 py-3.5 shadow-lg">
+                <span class="block font-serif text-2xl leading-none">60+</span>
+                <span class="block text-[10px] uppercase tracking-widest mt-0.5">Dogs fostered &amp; homed</span>
+              </div>
+            </div>
+          </div>
+          <!-- Bio -->
+          <div class="lg:col-span-3">
+            <h2 class="reveal font-serif text-3xl sm:text-4xl text-ink mb-4">Hello, I'm Rachel</h2>
+            <div class="reveal space-y-3 text-ink/75 leading-relaxed">
+              <p>I'm the owner of High Bridge Dog Retreat. Dogs have always been my biggest passion, and over 10 years ago I started getting involved in local dog rescues around the area.</p>
+              <p>To date I've fostered and homed 60+ dogs, adopting several of those fosters along the way. Since moving to a farm where I can host more pups, I've expanded into pet sitting.</p>
+              <p>I have a background in pet care and love every dog for their unique personality. You can have confidence that your dog will not only be <span class="text-terracotta-600 font-semibold">safe</span> but come home <span class="text-terracotta-600 font-semibold">happy</span> under my care.</p>
             </div>
           </div>
         </div>
