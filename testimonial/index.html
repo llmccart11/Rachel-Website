@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Share Your Experience - High Bridge Dog Retreat</title>
+  <meta name="description" content="Had a great stay with us? We'd love to hear about it." />
+  <meta name="robots" content="noindex" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="../images/favicon-512.png" />
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png" />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Playfair Display (serif display) + Nunito Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: { 50: '#FDFBF7', 100: '#FAF5EC', 200: '#F3E9D7', 300: '#EBDCC2' },
+            terracotta: { 50: '#FBF0EA', 100: '#F3D9CB', 200: '#E4B199', 300: '#D28C6A', 400: '#C1714B', 500: '#A85A38', 600: '#8F4A2C', 700: '#733A22' },
+            tan: { 100: '#EFE4D2', 200: '#DFC9A8', 300: '#C9A97C', 400: '#B08E5E' },
+            ink: '#3B2E25',
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Nunito Sans"', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    body { -webkit-font-smoothing: antialiased; }
+  </style>
+</head>
+
+<body class="bg-cream-50 text-ink font-sans antialiased min-h-screen">
+
+  <div class="max-w-xl mx-auto px-5 sm:px-8 py-16 sm:py-24">
+    <!-- Wordmark -->
+    <a href="/" class="flex items-center gap-3 justify-center mb-10">
+      <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-terracotta-500 text-cream-50 font-serif text-lg leading-none shadow-sm">HB</span>
+      <span class="leading-tight">
+        <span class="block font-serif text-lg text-ink">High Bridge</span>
+        <span class="block text-[10px] tracking-[0.25em] uppercase text-tan-400">Dog Retreat</span>
+      </span>
+    </a>
+
+    <div class="text-center mb-10">
+      <h1 class="font-serif text-3xl sm:text-4xl text-ink mb-4">We'd Love to Hear From You</h1>
+      <p class="text-ink/70 leading-relaxed">
+        If your pup had a great stay with us, would you take a minute to share a few words? It means a lot to us,
+        and it helps other pet parents feel confident leaving their dog in our care. Take your time. There's no rush.
+      </p>
+    </div>
+
+    <form id="testimonial-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="bg-white rounded-[2rem] p-8 sm:p-10 border border-cream-300 shadow-2xl">
+      <!-- NOTE: Replace YOUR_FORM_ID with the real Formspree form ID for testimonials. -->
+      <div class="mb-5">
+        <label for="t-name" class="block text-sm font-semibold text-ink mb-2">Your Name <span class="text-terracotta-500">*</span></label>
+        <input required type="text" id="t-name" name="your_name" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" placeholder="Jane Doe" />
+      </div>
+
+      <div class="mb-5">
+        <label for="t-dog" class="block text-sm font-semibold text-ink mb-2">Your Dog's Name</label>
+        <input type="text" id="t-dog" name="dog_name" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" placeholder="Buddy" />
+      </div>
+
+      <div class="mb-6">
+        <label for="t-message" class="block text-sm font-semibold text-ink mb-2">Your Experience <span class="text-terracotta-500">*</span></label>
+        <textarea required id="t-message" name="testimonial" rows="6" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" placeholder="What was your experience like? How did your dog seem when you picked them up? Anything else you'd want other pet parents to know?"></textarea>
+      </div>
+
+      <div class="mb-8">
+        <label class="flex items-start gap-3 cursor-pointer">
+          <input type="checkbox" name="ok_to_feature" value="Yes" class="mt-1 w-4 h-4 rounded border-cream-300 text-terracotta-500 focus:ring-terracotta-300" />
+          <span class="text-sm text-ink/70">It's okay to feature this on the High Bridge Dog Retreat website (we'll only use your first name).</span>
+        </label>
+      </div>
+
+      <button type="submit" class="w-full inline-flex items-center justify-center rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-cream-50 font-semibold px-8 py-4 shadow-sm transition-colors">
+        Submit Your Testimonial
+      </button>
+
+      <!-- Feedback messages -->
+      <p id="form-success" class="hidden mt-5 rounded-xl bg-green-50 border border-green-200 text-green-800 px-4 py-3 text-sm">
+        🐾 Thank you so much for taking the time to share this. It truly means a lot to us.
+      </p>
+      <p id="form-error" class="hidden mt-5 rounded-xl bg-red-50 border border-red-200 text-red-800 px-4 py-3 text-sm">
+        Something went wrong sending your note. Please try again, or reach us directly at highbridgedogretreat@gmail.com.
+      </p>
+    </form>
+  </div>
+
+  <script>
+    (function () {
+      'use strict';
+      var form = document.getElementById('testimonial-form');
+      var successMsg = document.getElementById('form-success');
+      var errorMsg = document.getElementById('form-error');
+      form.addEventListener('submit', function (e) {
+        if (!form.checkValidity()) return;
+        e.preventDefault();
+        successMsg.classList.add('hidden');
+        errorMsg.classList.add('hidden');
+
+        var action = form.getAttribute('action') || '';
+        if (action.indexOf('YOUR_FORM_ID') !== -1) {
+          successMsg.classList.remove('hidden');
+          form.reset();
+          successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          return;
+        }
+
+        var data = new FormData(form);
+        fetch(action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+          .then(function (response) {
+            if (response.ok) {
+              successMsg.classList.remove('hidden');
+              form.reset();
+              successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+              errorMsg.classList.remove('hidden');
+            }
+          })
+          .catch(function () { errorMsg.classList.remove('hidden'); });
+      });
+    })();
+  </script>
+</body>
+</html>
