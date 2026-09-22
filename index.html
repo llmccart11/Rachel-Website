@@ -486,7 +486,7 @@
                 </span>
                 <h3 class="font-serif text-2xl text-ink">Indoor Space</h3>
               </div>
-              <p class="text-ink/70 leading-relaxed">When it's time for a breather, dogs come inside to rest on couches and cozy dog beds in our calm lower-level lounge — a quiet spot to recharge between play sessions before heading home.</p>
+              <p class="text-ink/70 leading-relaxed">Days are spent mostly outdoors, but when it's time for a breather or the weather turns, dogs come inside to rest on couches and cozy dog beds in our calm lower-level lounge before heading back out to play.</p>
             </div>
           </div>
         </div>
@@ -539,7 +539,7 @@
             <h2 class="reveal font-serif text-3xl sm:text-4xl text-ink mb-4">Hello, I'm Rachel</h2>
             <div class="reveal space-y-3 text-ink/75 leading-relaxed">
               <p>I'm the owner of High Bridge Dog Daycare. Dogs have always been my greatest passion, and over 10 years ago I started getting involved in local dog rescues around the area.</p>
-              <p>To date I've fostered and homed 60+ dogs, adopting several of those fosters along the way. Moving to a farm let me open my fenced acreage to even more pups, growing that experience into a dog daycare.</p>
+              <p>To date I've fostered and homed 60+ dogs, adopting several of those fosters along the way. Moving to a rural property let me open my fenced acreage to even more pups, growing that experience into a dog daycare.</p>
               <p>I have a background in pet care and love every dog for their unique personality. You can have confidence that your dog will not only be <span class="text-terracotta-600 font-semibold">safe</span> but come home <span class="text-terracotta-600 font-semibold">happy</span> under my care.</p>
             </div>
           </div>
@@ -561,11 +561,17 @@
             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
               <div>
                 <h3 class="font-serif text-2xl leading-tight">Daycare Rate</h3>
-                <p class="text-cream-100/60 text-sm">Per dog, pickup &amp; drop-off included</p>
+                <p class="text-cream-100/60 text-sm">Pickup &amp; drop-off included</p>
               </div>
-              <div class="flex items-baseline gap-2">
-                <span class="font-sans font-bold text-5xl tabular-nums text-cream-50">$55</span>
-                <span class="text-cream-100/70 text-lg">/ day</span>
+              <div class="flex items-end gap-8">
+                <div>
+                  <div class="flex items-baseline gap-1"><span class="font-sans font-bold text-4xl sm:text-5xl tabular-nums text-cream-50">$55</span><span class="text-cream-100/70">/ day</span></div>
+                  <p class="text-[11px] uppercase tracking-[0.15em] text-terracotta-200 mt-1">First dog</p>
+                </div>
+                <div>
+                  <div class="flex items-baseline gap-1"><span class="font-sans font-bold text-4xl sm:text-5xl tabular-nums text-terracotta-200">$35</span><span class="text-cream-100/70">/ day</span></div>
+                  <p class="text-[11px] uppercase tracking-[0.15em] text-terracotta-200 mt-1">Each add'l dog, same home</p>
+                </div>
               </div>
             </div>
             <div class="mt-6 pt-6 border-t border-cream-100/15 grid sm:grid-cols-3 gap-4 text-sm">
@@ -583,6 +589,12 @@
               </div>
             </div>
           </div>
+
+          <!-- Trust line -->
+          <p class="reveal flex items-center justify-center gap-2 text-ink/60 text-sm mb-8">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-terracotta-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+            Licensed &amp; insured
+          </p>
 
           <!-- Intake form -->
           <div class="reveal">
@@ -636,19 +648,9 @@
                 </div>
               </div>
 
-              <div class="grid sm:grid-cols-2 gap-4 mb-6">
-                <div>
-                  <label for="start-date" class="block text-sm font-semibold text-ink mb-2">Preferred Start Date <span class="text-terracotta-500">*</span></label>
-                  <input required type="date" id="start-date" name="start_date" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" />
-                </div>
-                <div>
-                  <label for="free-trial" class="block text-sm font-semibold text-ink mb-2">Start with a free trial day? <span class="text-terracotta-500">*</span></label>
-                  <select required id="free-trial" name="free_trial" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition">
-                    <option value="">Select…</option>
-                    <option>Yes, I'd like a free trial day</option>
-                    <option>No, ready to start regular days</option>
-                  </select>
-                </div>
+              <div class="mb-6">
+                <label for="start-date" class="block text-sm font-semibold text-ink mb-2">Preferred Start Date <span class="text-terracotta-500">*</span></label>
+                <input required type="date" id="start-date" name="start_date" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" />
               </div>
 
               <!-- Dog details -->
@@ -675,6 +677,12 @@
               </div>
 
               <div class="mb-5">
+                <label for="records" class="block text-sm font-semibold text-ink mb-2">Vaccination &amp; Fecal Records</label>
+                <input type="file" id="records" name="records" multiple accept=".pdf,.jpg,.jpeg,.png,.heic,.heif" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink text-sm file:mr-4 file:rounded-full file:border-0 file:bg-terracotta-500 file:text-cream-50 file:px-4 file:py-2 file:font-semibold hover:file:bg-terracotta-600 focus:outline-none focus:ring-2 focus:ring-terracotta-300 transition" />
+                <p class="text-ink/50 text-xs mt-2">Upload up-to-date vaccination and fecal test records (PDF or photo). Prefer email? Send them to highbridgedogretreat@gmail.com.</p>
+              </div>
+
+              <div class="mb-5">
                 <label for="temperament" class="block text-sm font-semibold text-ink mb-2">Temperament &amp; Safety Notes <span class="text-terracotta-500">*</span></label>
                 <textarea required id="temperament" name="temperament_safety" rows="3" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" placeholder="How does your dog do with other dogs and people? Any reactivity, resource guarding, escape/jumping tendencies, or triggers we should know about?"></textarea>
               </div>
@@ -692,6 +700,11 @@
               </p>
             </form>
           </div>
+
+          <!-- Boarding note (secondary service, by inquiry) -->
+          <p class="reveal text-center text-ink/60 text-sm mt-8">
+            Looking for overnight boarding? I take a select few boarding clients — <a href="mailto:highbridgedogretreat@gmail.com" class="text-terracotta-600 font-semibold hover:text-terracotta-500 transition-colors">email me</a> to ask.
+          </p>
         </div>
       </div>
     </section>
