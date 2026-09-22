@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>High Bridge Dog Retreat - Boutique Pet Boarding</title>
-  <meta name="description" content="High Bridge Dog Retreat is a premium, boutique pet boarding business on 2.5 acres in Monroe, WA. Small-group, in-home care with daily updates. From $85/night." />
+  <title>High Bridge Dog Daycare - Dog Daycare with Pickup near Monroe, WA</title>
+  <meta name="description" content="High Bridge Dog Daycare offers door-to-door pickup and four hours of play on 2.5 fenced acres near Monroe, WA. $55/day, pickup included, 2-5 days a week. Free trial day." />
   <link rel="canonical" href="https://highbridgedogretreat.com/" />
 
   <!-- Favicon -->
@@ -13,15 +13,15 @@
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
 
   <!-- Link preview (Open Graph + Twitter) -->
-  <meta property="og:title" content="High Bridge Dog Retreat - Boutique Pet Boarding" />
-  <meta property="og:description" content="Premium, boutique pet boarding on 2.5 acres in Monroe, WA. Small-group, in-home care with daily updates. From $85/night." />
+  <meta property="og:title" content="High Bridge Dog Daycare - Dog Daycare with Pickup near Monroe, WA" />
+  <meta property="og:description" content="Door-to-door dog daycare on 2.5 fenced acres near Monroe, WA. Four hours of play, pickup included, $55/day. Free trial day." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://highbridgedogretreat.com/" />
   <meta property="og:image" content="https://highbridgedogretreat.com/images/hero.jpg" />
-  <meta property="og:site_name" content="High Bridge Dog Retreat" />
+  <meta property="og:site_name" content="High Bridge Dog Daycare" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="High Bridge Dog Retreat - Boutique Pet Boarding" />
-  <meta name="twitter:description" content="Premium, boutique pet boarding on 2.5 acres in Monroe, WA. From $85/night." />
+  <meta name="twitter:title" content="High Bridge Dog Daycare - Dog Daycare with Pickup near Monroe, WA" />
+  <meta name="twitter:description" content="Door-to-door dog daycare on 2.5 fenced acres near Monroe, WA. $55/day, pickup included. Free trial day." />
   <meta name="twitter:image" content="https://highbridgedogretreat.com/images/hero.jpg" />
 
   <!-- Structured data (helps Google show richer search results) -->
@@ -29,18 +29,19 @@
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "High Bridge Dog Retreat",
-    "description": "Premium, boutique pet boarding on 2.5 acres in Monroe, WA. Small-group, in-home care with daily updates.",
+    "name": "High Bridge Dog Daycare",
+    "description": "Door-to-door dog daycare on 2.5 fenced acres near Monroe, WA. Four hours of supervised play in small groups, pickup and drop-off included.",
     "url": "https://highbridgedogretreat.com/",
     "image": "https://highbridgedogretreat.com/images/hero.jpg",
     "email": "highbridgedogretreat@gmail.com",
+    "areaServed": ["Monroe, WA", "Duvall, WA", "Woodinville, WA"],
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Monroe",
       "addressRegion": "WA",
       "addressCountry": "US"
     },
-    "priceRange": "$75-$95",
+    "priceRange": "$55",
     "sameAs": ["https://www.instagram.com/rachelsrescuecrew"]
   }
   </script>
@@ -52,9 +53,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-
-  <!-- flatpickr date-range picker -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css" />
 
   <script>
     tailwind.config = {
@@ -179,29 +177,6 @@
       vertical-align: middle;
       margin: 0 14px;
     }
-
-    /* flatpickr date-range picker — terracotta theme to match the site */
-    .flatpickr-day.selected,
-    .flatpickr-day.startRange,
-    .flatpickr-day.endRange,
-    .flatpickr-day.selected:hover,
-    .flatpickr-day.startRange:hover,
-    .flatpickr-day.endRange:hover {
-      background: #A85A38;
-      border-color: #A85A38;
-    }
-    .flatpickr-day.inRange {
-      background: #F3D9CB;
-      border-color: #F3D9CB;
-      box-shadow: -5px 0 0 #F3D9CB, 5px 0 0 #F3D9CB;
-    }
-    .flatpickr-day.today { border-color: #C1714B; }
-    .flatpickr-day.selected.startRange + .endRange:not(:nth-child(7n+1)),
-    .flatpickr-day.startRange.startRange + .endRange:not(:nth-child(7n+1)) {
-      box-shadow: -10px 0 0 #A85A38;
-    }
-    span.flatpickr-weekday { color: #A85A38; }
-    .flatpickr-months .flatpickr-month, .flatpickr-current-month { color: #3B2E25; }
   </style>
 </head>
 
@@ -215,7 +190,7 @@
         <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-terracotta-500 text-cream-50 font-serif text-lg leading-none shadow-sm">HB</span>
         <span class="leading-tight">
           <span class="nav-word block font-serif text-lg sm:text-xl">High Bridge</span>
-          <span class="nav-sub block text-[10px] sm:text-xs tracking-[0.25em] uppercase">Dog Retreat</span>
+          <span class="nav-sub block text-[10px] sm:text-xs tracking-[0.25em] uppercase">Dog Daycare</span>
         </span>
       </a>
 
@@ -224,9 +199,10 @@
         <a href="#why" class="nav-link">Why Us</a>
         <a href="#locals" class="nav-link">Meet the Locals</a>
         <a href="#property" class="nav-link">The Property</a>
+        <a href="#area" class="nav-link">Pickup Area</a>
         <a href="#about" class="nav-link">About Us</a>
         <a href="#gallery" class="nav-link">Gallery</a>
-        <a href="#reserve" class="inline-flex items-center rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-cream-50 px-5 py-2.5 shadow-sm transition-colors">Reserve a Stay</a>
+        <a href="#reserve" class="inline-flex items-center rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-cream-50 px-5 py-2.5 shadow-sm transition-colors">Book a Trial</a>
       </div>
 
       <!-- Mobile hamburger -->
@@ -242,9 +218,10 @@
         <a href="#why" class="mobile-link py-3 border-b border-cream-300 hover:text-terracotta-500">Why Us</a>
         <a href="#locals" class="mobile-link py-3 border-b border-cream-300 hover:text-terracotta-500">Meet the Locals</a>
         <a href="#property" class="mobile-link py-3 border-b border-cream-300 hover:text-terracotta-500">The Property</a>
+        <a href="#area" class="mobile-link py-3 border-b border-cream-300 hover:text-terracotta-500">Pickup Area</a>
         <a href="#about" class="mobile-link py-3 border-b border-cream-300 hover:text-terracotta-500">About Us</a>
         <a href="#gallery" class="mobile-link py-3 border-b border-cream-300 hover:text-terracotta-500">Gallery</a>
-        <a href="#reserve" class="mobile-link mt-3 text-center rounded-full bg-terracotta-500 text-cream-50 px-5 py-3">Reserve a Stay</a>
+        <a href="#reserve" class="mobile-link mt-3 text-center rounded-full bg-terracotta-500 text-cream-50 px-5 py-3">Book a Trial</a>
       </div>
     </div>
   </header>
@@ -267,12 +244,16 @@
       <span class="jump-label text-xs font-semibold uppercase tracking-wider text-ink bg-cream-100 px-2.5 py-1 rounded-full shadow-sm">Property</span>
       <span class="jump-dot w-2.5 h-2.5 rounded-full bg-tan-300"></span>
     </a>
+    <a href="#area" data-target="area" class="jump-link flex items-center justify-end gap-3 group">
+      <span class="jump-label text-xs font-semibold uppercase tracking-wider text-ink bg-cream-100 px-2.5 py-1 rounded-full shadow-sm">Pickup Area</span>
+      <span class="jump-dot w-2.5 h-2.5 rounded-full bg-tan-300"></span>
+    </a>
     <a href="#about" data-target="about" class="jump-link flex items-center justify-end gap-3 group">
       <span class="jump-label text-xs font-semibold uppercase tracking-wider text-ink bg-cream-100 px-2.5 py-1 rounded-full shadow-sm">About Us</span>
       <span class="jump-dot w-2.5 h-2.5 rounded-full bg-tan-300"></span>
     </a>
     <a href="#reserve" data-target="reserve" class="jump-link flex items-center justify-end gap-3 group">
-      <span class="jump-label text-xs font-semibold uppercase tracking-wider text-ink bg-cream-100 px-2.5 py-1 rounded-full shadow-sm">Reserve</span>
+      <span class="jump-label text-xs font-semibold uppercase tracking-wider text-ink bg-cream-100 px-2.5 py-1 rounded-full shadow-sm">Sign Up</span>
       <span class="jump-dot w-2.5 h-2.5 rounded-full bg-tan-300"></span>
     </a>
     <a href="#gallery" data-target="gallery" class="jump-link flex items-center justify-end gap-3 group">
@@ -283,10 +264,10 @@
 
   <!-- ============================= FLOATING RESERVE BUTTON ============================= -->
   <!-- Appears after scrolling past the hero; fades out once the booking section is in view. -->
-  <a href="#reserve" id="floating-reserve" aria-label="Reserve a stay"
+  <a href="#reserve" id="floating-reserve" aria-label="Book a free trial day"
      class="fixed bottom-6 right-6 z-40 inline-flex items-center gap-2 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-cream-50 font-semibold px-6 py-4 shadow-xl opacity-0 translate-y-4 pointer-events-none transition-all duration-300">
     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-    <span>Reserve a Stay</span>
+    <span>Book a Trial</span>
   </a>
 
   <main id="home">
@@ -299,14 +280,14 @@
             Monroe, Washington
           </p>
           <h1 class="reveal font-serif text-4xl sm:text-6xl lg:text-7xl leading-[1.05] text-cream-50 mb-6">
-            2.5 Acres of<br />Luxury Dog Care
+            Dog Daycare on<br />2.5 Fenced Acres
           </h1>
           <p class="reveal text-lg sm:text-xl text-cream-100/90 max-w-xl mb-10 leading-relaxed">
-            A premium, boutique dog retreat where your pup roams, plays, and rests like family — never more than three guests at a time.
+            We pick your pup up, spend four happy hours running our fully fenced fields and trails, then bring them home tired and content — $55 a day, pickup included.
           </p>
           <div class="reveal flex flex-col sm:flex-row gap-4">
             <a href="#reserve" class="inline-flex items-center justify-center rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-cream-50 font-semibold px-8 py-4 shadow-lg transition-colors">
-              Reserve a Stay
+              Book a Free Trial Day
             </a>
             <a href="#property" class="inline-flex items-center justify-center rounded-full bg-cream-50/10 hover:bg-cream-50/20 backdrop-blur border border-cream-100/40 text-cream-50 font-semibold px-8 py-4 transition-colors">
               Take a Tour
@@ -326,7 +307,7 @@
       <div class="max-w-7xl mx-auto px-5 sm:px-8">
         <div class="text-center max-w-2xl mx-auto mb-16">
           <h2 class="reveal font-serif text-3xl sm:text-5xl text-ink mb-5">Why Dogs &amp; Owners Love Us</h2>
-          <p class="reveal text-ink/70 text-lg leading-relaxed">More than boarding. A true retreat, thoughtfully designed around your dog's comfort and your peace of mind.</p>
+          <p class="reveal text-ink/70 text-lg leading-relaxed">More than daycare. Door-to-door pickup, small play groups, and acres of fenced space to run, sniff, and explore.</p>
         </div>
 
         <div class="grid sm:grid-cols-2 gap-x-14 gap-y-12 max-w-5xl mx-auto">
@@ -336,8 +317,8 @@
               <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
             </div>
             <div>
-              <h3 class="font-serif text-2xl text-ink mb-2">Room to Roam &amp; Rest</h3>
-              <p class="text-ink/70 leading-relaxed text-base">2.5 acres split into 3 fenced yards for safe daytime play. Dogs can come inside anytime to relax on couches, dog beds, or a kennel on request.</p>
+              <h3 class="font-serif text-2xl text-ink mb-2">2.5 Fenced Acres</h3>
+              <p class="text-ink/70 leading-relaxed text-base">Fully fenced fields, yards, and trails to explore all day long — plus the occasional adventure down to the river. Room to truly run.</p>
             </div>
           </div>
           <!-- Bullet 2 -->
@@ -346,8 +327,8 @@
               <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
             </div>
             <div>
-              <h3 class="font-serif text-2xl text-ink mb-2">Daily Check-Ins</h3>
-              <p class="text-ink/70 leading-relaxed text-base">Videos and updates every single day of the stay, so you can see exactly how your dog is doing while you're away.</p>
+              <h3 class="font-serif text-2xl text-ink mb-2">Door-to-Door Pickup</h3>
+              <p class="text-ink/70 leading-relaxed text-base">We pick your dog up and drop them back home, so daycare fits right into your workday. Pickup and drop-off are included in the daily rate — no extra fee.</p>
             </div>
           </div>
           <!-- Bullet 3 -->
@@ -356,8 +337,8 @@
               <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-1.13a4 4 0 10-4-4 4 4 0 004 4zm6 0a3 3 0 10-3-3" /></svg>
             </div>
             <div>
-              <h3 class="font-serif text-2xl text-ink mb-2">Join the Pack</h3>
-              <p class="text-ink/70 leading-relaxed text-base">With 4 friendly resident pups, your dog is bound to find a playmate during their stay, or enjoy their own quiet space if that's more their style.</p>
+              <h3 class="font-serif text-2xl text-ink mb-2">Small Play Groups</h3>
+              <p class="text-ink/70 leading-relaxed text-base">Never more than 5 dogs a day, so every pup gets real attention and plays with familiar friends — including our own friendly resident crew.</p>
             </div>
           </div>
           <!-- Bullet 4 -->
@@ -366,8 +347,8 @@
               <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
             </div>
             <div>
-              <h3 class="font-serif text-2xl text-ink mb-2">Focused Care</h3>
-              <p class="text-ink/70 leading-relaxed text-base">We're a dog retreat, not a corporate boarding facility. We never host more than 3 guest dogs at a time, so yours always gets special attention and plenty of space.</p>
+              <h3 class="font-serif text-2xl text-ink mb-2">Free Trial Day</h3>
+              <p class="text-ink/70 leading-relaxed text-base">Not sure daycare is the right fit? The first day is on us, so you and your pup can try it out worry-free before signing up.</p>
             </div>
           </div>
         </div>
@@ -441,7 +422,7 @@
       <div class="max-w-7xl mx-auto px-5 sm:px-8">
         <div class="text-center max-w-3xl mx-auto mb-16">
           <h2 class="reveal font-serif text-3xl sm:text-5xl text-ink mb-5">The Property</h2>
-          <p class="reveal text-ink/70 text-lg leading-relaxed md:whitespace-nowrap">Wide-open acreage to run by day, and a warm, comfortable home to unwind in by night.</p>
+          <p class="reveal text-ink/70 text-lg leading-relaxed md:whitespace-nowrap">Wide-open, fully fenced acreage — fields, yards, and trails made for a full day of play.</p>
         </div>
 
         <div class="grid lg:grid-cols-2 gap-8">
@@ -483,7 +464,7 @@
                 </span>
                 <h3 class="font-serif text-2xl text-ink">Outdoor Space</h3>
               </div>
-              <p class="text-ink/70 leading-relaxed">A full 2.5 acres divided into 3 securely fenced yards, giving every guest room to run, sniff, and play safely, with space to separate pups when they'd prefer some quiet time of their own.</p>
+              <p class="text-ink/70 leading-relaxed">A full 2.5 acres of securely fenced yards, fields, and trails, giving every pup room to run, sniff, and explore safely — with space to match calmer dogs with just the right playmates.</p>
             </div>
           </div>
 
@@ -494,7 +475,7 @@
               <div class="carousel-track aspect-[4/3] bg-tan-100 flex overflow-x-auto snap-x snap-mandatory no-scrollbar">
                 <img src="images/property-indoor-1.jpg" onerror="this.style.display='none'" alt="Dogs relaxing on plush beds by the fireplace indoors" class="snap-center shrink-0 w-full h-full object-cover" />
                 <img src="images/property-indoor-2.jpg" onerror="this.style.display='none'" alt="Dogs napping cozily together on the couch indoors" class="snap-center shrink-0 w-full h-full object-cover" />
-                <img src="images/property-indoor-3.jpg" onerror="this.style.display='none'" alt="Indoor lounge space at the retreat" class="snap-center shrink-0 w-full h-full object-cover" />
+                <img src="images/property-indoor-3.jpg" onerror="this.style.display='none'" alt="Indoor lounge space where daycare dogs rest" class="snap-center shrink-0 w-full h-full object-cover" />
               </div>
               <div class="carousel-dots absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5"></div>
             </div>
@@ -505,15 +486,43 @@
                 </span>
                 <h3 class="font-serif text-2xl text-ink">Indoor Space</h3>
               </div>
-              <p class="text-ink/70 leading-relaxed">A true in-home experience: couches, cozy dog beds, and kennels on request. Our luxury lower-level lounge is set apart from the office and living quarters, giving guests a calm, dedicated space to truly settle in and rest.</p>
+              <p class="text-ink/70 leading-relaxed">When it's time for a breather, dogs come inside to rest on couches and cozy dog beds in our calm lower-level lounge — a quiet spot to recharge between play sessions before heading home.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ============================= WHERE WE PICK UP ============================= -->
+    <section id="area" class="py-14 sm:py-20 bg-cream-100">
+      <div class="max-w-5xl mx-auto px-5 sm:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <h2 class="reveal font-serif text-3xl sm:text-5xl text-ink mb-5">Where We Pick Up</h2>
+          <p class="reveal text-ink/70 text-lg leading-relaxed">Door-to-door pickup and drop-off around Monroe, Duvall, and Woodinville. Not sure if you're in the zone? Just ask — we're happy to check.</p>
+        </div>
+
+        <div class="reveal flex flex-wrap justify-center gap-3 mb-10">
+          <span class="inline-flex items-center rounded-full bg-terracotta-50 text-terracotta-600 font-semibold px-5 py-2 text-sm">Monroe</span>
+          <span class="inline-flex items-center rounded-full bg-terracotta-50 text-terracotta-600 font-semibold px-5 py-2 text-sm">Duvall</span>
+          <span class="inline-flex items-center rounded-full bg-terracotta-50 text-terracotta-600 font-semibold px-5 py-2 text-sm">Woodinville</span>
+        </div>
+
+        <!-- SERVICE-AREA MAP:
+             Draw your pickup zone in Google My Maps (google.com/mymaps) covering Monroe out to
+             Duvall and Woodinville, then use Share > "Embed on my site", copy the <iframe>, and
+             paste it in place of the placeholder <div> below (keep the rounded wrapper div). -->
+        <div class="reveal rounded-[2rem] overflow-hidden border border-cream-300 shadow-sm bg-cream-50">
+          <div class="aspect-[16/9] w-full flex flex-col items-center justify-center text-center gap-3 text-ink/50 bg-tan-100/50 px-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-terracotta-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4"><path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-1.447-.894L15 4m0 13V4m0 0L9 7" /></svg>
+            <p class="font-semibold text-ink/70">Service-area map coming soon</p>
+            <p class="text-sm max-w-sm">We're finishing our pickup map for Monroe, Duvall, and Woodinville. In the meantime, reach out and we'll confirm we can reach you.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ============================= ABOUT RACHEL ============================= -->
-    <section id="about" class="py-12 sm:py-16 bg-cream-100">
+    <section id="about" class="py-12 sm:py-16 bg-cream-50">
       <div class="max-w-5xl mx-auto px-5 sm:px-8">
         <div class="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center">
           <!-- Portrait -->
@@ -521,7 +530,7 @@
             <div class="relative max-w-[16rem] mx-auto lg:max-w-none">
               <div class="aspect-[4/5] rounded-3xl overflow-hidden bg-tan-100 shadow-xl">
                 <!-- PHOTO: upload images/rachel-1.jpg (portrait works best) -->
-                <img src="images/rachel-1.jpg" onerror="this.style.display='none'" alt="Rachel, owner of High Bridge Dog Retreat, in the snow with a rescue dog" class="w-full h-full object-cover" />
+                <img src="images/rachel-1.jpg" onerror="this.style.display='none'" alt="Rachel, owner of High Bridge Dog Daycare, in the snow with a rescue dog" class="w-full h-full object-cover" />
               </div>
             </div>
           </div>
@@ -529,8 +538,8 @@
           <div class="lg:col-span-3">
             <h2 class="reveal font-serif text-3xl sm:text-4xl text-ink mb-4">Hello, I'm Rachel</h2>
             <div class="reveal space-y-3 text-ink/75 leading-relaxed">
-              <p>I'm the owner of High Bridge Dog Retreat. Dogs have always been my greatest passion, and over 10 years ago I started getting involved in local dog rescues around the area.</p>
-              <p>To date I've fostered and homed 60+ dogs, adopting several of those fosters along the way. Moving to a farm let me open my home to even more pups, growing that experience into pet sitting.</p>
+              <p>I'm the owner of High Bridge Dog Daycare. Dogs have always been my greatest passion, and over 10 years ago I started getting involved in local dog rescues around the area.</p>
+              <p>To date I've fostered and homed 60+ dogs, adopting several of those fosters along the way. Moving to a farm let me open my fenced acreage to even more pups, growing that experience into a dog daycare.</p>
               <p>I have a background in pet care and love every dog for their unique personality. You can have confidence that your dog will not only be <span class="text-terracotta-600 font-semibold">safe</span> but come home <span class="text-terracotta-600 font-semibold">happy</span> under my care.</p>
             </div>
           </div>
@@ -539,31 +548,38 @@
     </section>
 
     <!-- ============================= PRICING & RESERVE ============================= -->
-    <section id="reserve" class="py-14 sm:py-20 bg-cream-50">
+    <section id="reserve" class="py-14 sm:py-20 bg-cream-100">
       <div class="max-w-7xl mx-auto px-5 sm:px-8">
         <div class="text-center max-w-2xl mx-auto mb-10">
-          <h2 class="reveal font-serif text-3xl sm:text-5xl text-ink mb-5">Reserve Your Stay</h2>
-          <p class="reveal text-ink/70 text-lg leading-relaxed">Simple, honest rates with no hidden fees. Tell us about your pup and we'll be in touch to confirm the details.</p>
+          <h2 class="reveal font-serif text-3xl sm:text-5xl text-ink mb-5">Sign Up for Daycare</h2>
+          <p class="reveal text-ink/70 text-lg leading-relaxed">Simple, flat pricing with pickup included. Tell us about your pup and we'll be in touch to set up your free trial day.</p>
         </div>
 
         <div class="max-w-4xl mx-auto">
           <!-- Pricing banner (compact, full width) -->
-          <div class="reveal bg-ink text-cream-50 rounded-[2rem] px-6 py-6 sm:px-9 sm:py-7 shadow-xl mb-8">
-            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
+          <div class="reveal bg-ink text-cream-50 rounded-[2rem] px-6 py-7 sm:px-9 sm:py-8 shadow-xl mb-8">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
               <div>
-                <h3 class="font-serif text-2xl leading-tight">Nightly Rates</h3>
-                <p class="text-cream-100/60 text-sm">Per dog</p>
+                <h3 class="font-serif text-2xl leading-tight">Daycare Rate</h3>
+                <p class="text-cream-100/60 text-sm">Per dog, pickup &amp; drop-off included</p>
               </div>
-              <div class="grid grid-cols-[auto_auto_auto] gap-x-7 sm:gap-x-10 gap-y-1.5 items-center">
-                <span></span>
-                <span class="text-center text-xs font-semibold uppercase tracking-[0.15em] text-terracotta-200">Weekday</span>
-                <span class="text-center text-xs font-semibold uppercase tracking-[0.15em] text-terracotta-200">Weekend</span>
-                <span class="font-semibold text-cream-50 pr-2">First dog</span>
-                <span class="text-center font-sans font-bold text-2xl tabular-nums text-cream-50">$85</span>
-                <span class="text-center font-sans font-bold text-2xl tabular-nums text-cream-50">$95</span>
-                <span class="font-semibold text-cream-50 pr-2">Each additional</span>
-                <span class="text-center font-sans font-bold text-2xl tabular-nums text-terracotta-200">$75</span>
-                <span class="text-center font-sans font-bold text-2xl tabular-nums text-terracotta-200">$85</span>
+              <div class="flex items-baseline gap-2">
+                <span class="font-sans font-bold text-5xl tabular-nums text-cream-50">$55</span>
+                <span class="text-cream-100/70 text-lg">/ day</span>
+              </div>
+            </div>
+            <div class="mt-6 pt-6 border-t border-cream-100/15 grid sm:grid-cols-3 gap-4 text-sm">
+              <div class="flex items-start gap-2.5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-terracotta-200 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                <span class="text-cream-100/85"><span class="font-semibold text-cream-50">First day free</span> — try it out, no commitment</span>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-terracotta-200 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                <span class="text-cream-100/85"><span class="font-semibold text-cream-50">2–5 days a week</span> (2-day weekly minimum)</span>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-terracotta-200 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                <span class="text-cream-100/85"><span class="font-semibold text-cream-50">~4 hours of play</span>, then home again</span>
               </div>
             </div>
           </div>
@@ -592,11 +608,47 @@
                 </div>
               </div>
 
-              <!-- Stay details -->
-              <p class="text-xs font-semibold uppercase tracking-widest text-terracotta-500 mb-3">The Stay</p>
-              <div class="mb-6">
-                <label for="stay-dates" class="block text-sm font-semibold text-ink mb-2">Requested Dates <span class="text-ink/50 font-normal">(drop-off &amp; pick-up)</span></label>
-                <input type="text" id="stay-dates" name="stay_dates" readonly placeholder="Select drop-off and pick-up dates" class="w-full cursor-pointer rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" />
+              <!-- Daycare schedule -->
+              <p class="text-xs font-semibold uppercase tracking-widest text-terracotta-500 mb-3">Daycare Schedule</p>
+              <div class="mb-5">
+                <label for="pickup-address" class="block text-sm font-semibold text-ink mb-2">Pickup Address <span class="text-terracotta-500">*</span> <span class="text-ink/50 font-normal">(so we can confirm you're in our area)</span></label>
+                <input required type="text" id="pickup-address" name="pickup_address" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" placeholder="Street, City (Monroe / Duvall / Woodinville area)" />
+              </div>
+
+              <div class="mb-5">
+                <span class="block text-sm font-semibold text-ink mb-2">Which days? <span class="text-terracotta-500">*</span> <span class="text-ink/50 font-normal">(choose 2–5)</span></span>
+                <div class="grid grid-cols-2 sm:grid-cols-5 gap-2">
+                  <label class="flex items-center gap-2 rounded-xl border border-cream-300 bg-cream-100 px-3 py-2.5 cursor-pointer hover:border-terracotta-300 transition">
+                    <input type="checkbox" name="days[]" value="Monday" class="accent-terracotta-500 w-4 h-4" /> <span class="text-sm text-ink">Mon</span>
+                  </label>
+                  <label class="flex items-center gap-2 rounded-xl border border-cream-300 bg-cream-100 px-3 py-2.5 cursor-pointer hover:border-terracotta-300 transition">
+                    <input type="checkbox" name="days[]" value="Tuesday" class="accent-terracotta-500 w-4 h-4" /> <span class="text-sm text-ink">Tue</span>
+                  </label>
+                  <label class="flex items-center gap-2 rounded-xl border border-cream-300 bg-cream-100 px-3 py-2.5 cursor-pointer hover:border-terracotta-300 transition">
+                    <input type="checkbox" name="days[]" value="Wednesday" class="accent-terracotta-500 w-4 h-4" /> <span class="text-sm text-ink">Wed</span>
+                  </label>
+                  <label class="flex items-center gap-2 rounded-xl border border-cream-300 bg-cream-100 px-3 py-2.5 cursor-pointer hover:border-terracotta-300 transition">
+                    <input type="checkbox" name="days[]" value="Thursday" class="accent-terracotta-500 w-4 h-4" /> <span class="text-sm text-ink">Thu</span>
+                  </label>
+                  <label class="flex items-center gap-2 rounded-xl border border-cream-300 bg-cream-100 px-3 py-2.5 cursor-pointer hover:border-terracotta-300 transition">
+                    <input type="checkbox" name="days[]" value="Friday" class="accent-terracotta-500 w-4 h-4" /> <span class="text-sm text-ink">Fri</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="grid sm:grid-cols-2 gap-4 mb-6">
+                <div>
+                  <label for="start-date" class="block text-sm font-semibold text-ink mb-2">Preferred Start Date <span class="text-terracotta-500">*</span></label>
+                  <input required type="date" id="start-date" name="start_date" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" />
+                </div>
+                <div>
+                  <label for="free-trial" class="block text-sm font-semibold text-ink mb-2">Start with a free trial day? <span class="text-terracotta-500">*</span></label>
+                  <select required id="free-trial" name="free_trial" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition">
+                    <option value="">Select…</option>
+                    <option>Yes, I'd like a free trial day</option>
+                    <option>No, ready to start regular days</option>
+                  </select>
+                </div>
               </div>
 
               <!-- Dog details -->
@@ -628,15 +680,15 @@
               </div>
 
               <button type="submit" class="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-cream-50 font-semibold px-8 py-4 shadow-sm transition-colors">
-                Request Reservation
+                Request My Spot
               </button>
 
               <!-- Feedback messages -->
               <p id="form-success" class="hidden mt-5 rounded-xl bg-green-50 border border-green-200 text-green-800 px-4 py-3 text-sm">
-                🐾 Thank you! Your reservation request has been sent. We'll be in touch soon to confirm the details.
+                🐾 Thank you! Your daycare request has been sent. We'll be in touch soon to set up your free trial day.
               </p>
               <p id="form-error" class="hidden mt-5 rounded-xl bg-red-50 border border-red-200 text-red-800 px-4 py-3 text-sm">
-                Something went wrong sending your request. Please try again, or reach us directly at the number below.
+                Something went wrong sending your request. Please try again, or email us directly at highbridgedogretreat@gmail.com.
               </p>
             </form>
           </div>
@@ -645,11 +697,11 @@
     </section>
 
     <!-- ============================= GALLERY ============================= -->
-    <section id="gallery" class="py-14 sm:py-20 bg-cream-100">
+    <section id="gallery" class="py-14 sm:py-20 bg-cream-50">
       <div class="max-w-screen-2xl mx-auto px-5 sm:px-8">
         <div class="text-center max-w-2xl mx-auto mb-16">
           <h2 class="reveal font-serif text-3xl sm:text-5xl text-ink mb-5">Gallery</h2>
-          <p class="reveal text-ink/70 text-lg leading-relaxed">A look at some of our past guests enjoying their stay.</p>
+          <p class="reveal text-ink/70 text-lg leading-relaxed">A look at some of our daycare pups enjoying a day of play.</p>
         </div>
 
         <!-- PHOTOS: upload images/gallery-1.jpg through images/gallery-10.jpg (square works best) -->
@@ -707,10 +759,10 @@
             <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-terracotta-500 text-cream-50 font-serif text-lg">HB</span>
             <span class="leading-tight">
               <span class="block font-serif text-lg text-cream-50">High Bridge</span>
-              <span class="block text-[10px] tracking-[0.25em] uppercase text-tan-300">Dog Retreat</span>
+              <span class="block text-[10px] tracking-[0.25em] uppercase text-tan-300">Dog Daycare</span>
             </span>
           </div>
-          <p class="text-cream-100/60 text-sm leading-relaxed max-w-xs">Premium, boutique pet boarding on 2.5 acres in Monroe, Washington.</p>
+          <p class="text-cream-100/60 text-sm leading-relaxed max-w-xs">Door-to-door dog daycare on 2.5 fenced acres near Monroe, Washington. Pickup around Monroe, Duvall &amp; Woodinville.</p>
         </div>
 
         <!-- Contact -->
@@ -735,14 +787,13 @@
       </div>
 
       <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-cream-100/50">
-        <p>&copy; <span id="year"></span> High Bridge Dog Retreat. All rights reserved.</p>
-        <p>Boutique pet boarding · Monroe, WA</p>
+        <p>&copy; <span id="year"></span> High Bridge Dog Daycare. All rights reserved.</p>
+        <p>Dog daycare with pickup · Monroe, WA</p>
       </div>
     </div>
   </footer>
 
   <!-- ============================= SCRIPT ============================= -->
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.js"></script>
   <script>
     (function () {
       'use strict';
@@ -750,15 +801,10 @@
       /* ---- Current year ---- */
       document.getElementById('year').textContent = new Date().getFullYear();
 
-      /* ---- Date-range picker for drop-off / pick-up ---- */
-      var stayInput = document.getElementById('stay-dates');
-      if (stayInput && window.flatpickr) {
-        flatpickr(stayInput, {
-          mode: 'range',
-          minDate: 'today',
-          dateFormat: 'M j, Y',
-          disableMobile: true // use the range calendar on mobile too (native can't do ranges)
-        });
+      /* ---- Preferred start date: don't allow past dates ---- */
+      var startDate = document.getElementById('start-date');
+      if (startDate) {
+        startDate.min = new Date().toISOString().split('T')[0];
       }
 
       /* ---- Sticky nav: solid background + shadow on scroll ---- */
@@ -829,7 +875,7 @@
         sections.forEach(function (s) { sectionObserver.observe(s); });
       }
 
-      /* ---- Floating "Reserve a Stay" button ---- */
+      /* ---- Floating "Book a Trial" button ---- */
       /* Shows once the hero is mostly scrolled away; hides again once the
          booking section rises into view so it never covers the form. */
       var floatBtn = document.getElementById('floating-reserve');
