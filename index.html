@@ -613,98 +613,60 @@
 
           <!-- Intake form -->
           <div class="reveal">
-            <form id="intake-form" action="https://formspree.io/f/xykrkpjp" method="POST" class="bg-white rounded-[2rem] p-8 sm:p-10 border border-cream-300 shadow-2xl">
+            <form id="intake-form" action="https://formspree.io/f/xykrkpjp" method="POST" class="max-w-3xl mx-auto bg-white rounded-3xl p-6 sm:p-8 border border-cream-300 shadow-sm">
               <!-- Submissions are delivered via Formspree (form id xykrkpjp). -->
-              <h3 class="font-serif text-2xl text-ink mb-1">Client &amp; Dog Intake</h3>
-              <p class="text-ink/60 text-sm mb-6">Fields marked <span class="text-terracotta-500">*</span> are required.</p>
+              <h3 class="font-serif text-2xl text-ink mb-1">Tell Us About Your Pup</h3>
+              <p class="text-ink/60 text-sm mb-6">Takes about two minutes. We'll reach out to talk through the details.</p>
 
-              <!-- Owner details -->
-              <p class="text-xs font-semibold uppercase tracking-widest text-terracotta-500 mb-3">Your Details</p>
-              <div class="grid sm:grid-cols-2 gap-4 mb-6">
+              <div class="grid sm:grid-cols-2 gap-x-4 gap-y-4">
                 <div>
-                  <label for="owner-name" class="block text-sm font-semibold text-ink mb-2">Your Name <span class="text-terracotta-500">*</span></label>
-                  <input required type="text" id="owner-name" name="owner_name" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" placeholder="Jane Doe" />
+                  <label for="owner-name" class="block text-sm font-semibold text-ink mb-1.5">Your name</label>
+                  <input required type="text" id="owner-name" name="owner_name" autocomplete="name" class="w-full rounded-xl border border-cream-300 bg-cream-50 px-4 py-2.5 text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" placeholder="Jane Doe" />
                 </div>
                 <div>
-                  <label for="owner-email" class="block text-sm font-semibold text-ink mb-2">Email <span class="text-terracotta-500">*</span></label>
-                  <input required type="email" id="owner-email" name="email" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" placeholder="you@email.com" />
+                  <label for="owner-email" class="block text-sm font-semibold text-ink mb-1.5">Email</label>
+                  <input required type="email" id="owner-email" name="email" autocomplete="email" class="w-full rounded-xl border border-cream-300 bg-cream-50 px-4 py-2.5 text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" placeholder="you@email.com" />
                 </div>
                 <div>
-                  <label for="owner-phone" class="block text-sm font-semibold text-ink mb-2">Phone <span class="text-terracotta-500">*</span></label>
-                  <input required type="tel" id="owner-phone" name="phone" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" placeholder="(555) 555-5555" />
-                </div>
-              </div>
-
-              <!-- Daycare schedule -->
-              <p class="text-xs font-semibold uppercase tracking-widest text-terracotta-500 mb-3">Daycare Schedule</p>
-              <div class="mb-5">
-                <label for="pickup-address" class="block text-sm font-semibold text-ink mb-2">Pickup Address <span class="text-terracotta-500">*</span> <span class="text-ink/50 font-normal">(so we can confirm you're in our area)</span></label>
-                <input required type="text" id="pickup-address" name="pickup_address" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" placeholder="Street, City (Duvall / Woodinville area)" />
-              </div>
-
-              <div class="mb-5">
-                <span class="block text-sm font-semibold text-ink mb-2">Which days? <span class="text-terracotta-500">*</span> <span class="text-ink/50 font-normal">(choose 2–5)</span></span>
-                <div class="grid grid-cols-2 sm:grid-cols-5 gap-2">
-                  <label class="flex items-center gap-2 rounded-xl border border-cream-300 bg-cream-100 px-3 py-2.5 cursor-pointer hover:border-terracotta-300 transition">
-                    <input type="checkbox" name="days[]" value="Monday" class="accent-terracotta-500 w-4 h-4" /> <span class="text-sm text-ink">Mon</span>
-                  </label>
-                  <label class="flex items-center gap-2 rounded-xl border border-cream-300 bg-cream-100 px-3 py-2.5 cursor-pointer hover:border-terracotta-300 transition">
-                    <input type="checkbox" name="days[]" value="Tuesday" class="accent-terracotta-500 w-4 h-4" /> <span class="text-sm text-ink">Tue</span>
-                  </label>
-                  <label class="flex items-center gap-2 rounded-xl border border-cream-300 bg-cream-100 px-3 py-2.5 cursor-pointer hover:border-terracotta-300 transition">
-                    <input type="checkbox" name="days[]" value="Wednesday" class="accent-terracotta-500 w-4 h-4" /> <span class="text-sm text-ink">Wed</span>
-                  </label>
-                  <label class="flex items-center gap-2 rounded-xl border border-cream-300 bg-cream-100 px-3 py-2.5 cursor-pointer hover:border-terracotta-300 transition">
-                    <input type="checkbox" name="days[]" value="Thursday" class="accent-terracotta-500 w-4 h-4" /> <span class="text-sm text-ink">Thu</span>
-                  </label>
-                  <label class="flex items-center gap-2 rounded-xl border border-cream-300 bg-cream-100 px-3 py-2.5 cursor-pointer hover:border-terracotta-300 transition">
-                    <input type="checkbox" name="days[]" value="Friday" class="accent-terracotta-500 w-4 h-4" /> <span class="text-sm text-ink">Fri</span>
-                  </label>
-                </div>
-              </div>
-
-              <div class="mb-6">
-                <label for="start-date" class="block text-sm font-semibold text-ink mb-2">Preferred Start Date <span class="text-terracotta-500">*</span></label>
-                <input required type="date" id="start-date" name="start_date" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" />
-              </div>
-
-              <!-- Dog details -->
-              <p class="text-xs font-semibold uppercase tracking-widest text-terracotta-500 mb-3">About Your Dog</p>
-              <div class="grid sm:grid-cols-2 gap-4 mb-4">
-                <div>
-                  <label for="dog-name" class="block text-sm font-semibold text-ink mb-2">Dog's Name <span class="text-terracotta-500">*</span></label>
-                  <input required type="text" id="dog-name" name="dog_name" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" placeholder="Buddy" />
+                  <label for="owner-phone" class="block text-sm font-semibold text-ink mb-1.5">Phone</label>
+                  <input required type="tel" id="owner-phone" name="phone" autocomplete="tel" class="w-full rounded-xl border border-cream-300 bg-cream-50 px-4 py-2.5 text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" placeholder="(555) 555-5555" />
                 </div>
                 <div>
-                  <label for="dog-breed" class="block text-sm font-semibold text-ink mb-2">Breed <span class="text-terracotta-500">*</span></label>
-                  <input required type="text" id="dog-breed" name="breed" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" placeholder="Golden Retriever" />
+                  <label for="pickup-address" class="block text-sm font-semibold text-ink mb-1.5">Pickup address</label>
+                  <input required type="text" id="pickup-address" name="pickup_address" autocomplete="street-address" class="w-full rounded-xl border border-cream-300 bg-cream-50 px-4 py-2.5 text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" placeholder="Street, City" />
+                </div>
+                <div>
+                  <label for="dog-name" class="block text-sm font-semibold text-ink mb-1.5">Dog's name</label>
+                  <input required type="text" id="dog-name" name="dog_name" class="w-full rounded-xl border border-cream-300 bg-cream-50 px-4 py-2.5 text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" placeholder="Buddy" />
+                </div>
+                <div>
+                  <label for="dog-breed" class="block text-sm font-semibold text-ink mb-1.5">Breed</label>
+                  <input required type="text" id="dog-breed" name="breed" class="w-full rounded-xl border border-cream-300 bg-cream-50 px-4 py-2.5 text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" placeholder="Golden Retriever" />
+                </div>
+                <div>
+                  <span class="block text-sm font-semibold text-ink mb-1.5">Days you'd like <span class="text-ink/50 font-normal">(2–5)</span></span>
+                  <div class="grid grid-cols-5 gap-2">
+                    <label class="cursor-pointer"><input type="checkbox" name="days[]" value="Monday" class="peer sr-only" /><span class="block text-center rounded-full border border-cream-300 bg-cream-50 py-2 text-sm text-ink hover:border-terracotta-300 peer-checked:bg-terracotta-500 peer-checked:border-terracotta-500 peer-checked:text-cream-50 peer-focus-visible:ring-2 peer-focus-visible:ring-terracotta-300 transition">Mon</span></label>
+                    <label class="cursor-pointer"><input type="checkbox" name="days[]" value="Tuesday" class="peer sr-only" /><span class="block text-center rounded-full border border-cream-300 bg-cream-50 py-2 text-sm text-ink hover:border-terracotta-300 peer-checked:bg-terracotta-500 peer-checked:border-terracotta-500 peer-checked:text-cream-50 peer-focus-visible:ring-2 peer-focus-visible:ring-terracotta-300 transition">Tue</span></label>
+                    <label class="cursor-pointer"><input type="checkbox" name="days[]" value="Wednesday" class="peer sr-only" /><span class="block text-center rounded-full border border-cream-300 bg-cream-50 py-2 text-sm text-ink hover:border-terracotta-300 peer-checked:bg-terracotta-500 peer-checked:border-terracotta-500 peer-checked:text-cream-50 peer-focus-visible:ring-2 peer-focus-visible:ring-terracotta-300 transition">Wed</span></label>
+                    <label class="cursor-pointer"><input type="checkbox" name="days[]" value="Thursday" class="peer sr-only" /><span class="block text-center rounded-full border border-cream-300 bg-cream-50 py-2 text-sm text-ink hover:border-terracotta-300 peer-checked:bg-terracotta-500 peer-checked:border-terracotta-500 peer-checked:text-cream-50 peer-focus-visible:ring-2 peer-focus-visible:ring-terracotta-300 transition">Thu</span></label>
+                    <label class="cursor-pointer"><input type="checkbox" name="days[]" value="Friday" class="peer sr-only" /><span class="block text-center rounded-full border border-cream-300 bg-cream-50 py-2 text-sm text-ink hover:border-terracotta-300 peer-checked:bg-terracotta-500 peer-checked:border-terracotta-500 peer-checked:text-cream-50 peer-focus-visible:ring-2 peer-focus-visible:ring-terracotta-300 transition">Fri</span></label>
+                  </div>
+                </div>
+                <div>
+                  <label for="start-date" class="block text-sm font-semibold text-ink mb-1.5">Ideal start date</label>
+                  <input required type="date" id="start-date" name="start_date" class="w-full rounded-xl border border-cream-300 bg-cream-50 px-4 py-2.5 text-ink focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" />
+                </div>
+                <div class="sm:col-span-2">
+                  <label for="temperament" class="block text-sm font-semibold text-ink mb-1.5">How does your dog do with other dogs and people?</label>
+                  <textarea required id="temperament" name="temperament_safety" rows="3" class="w-full rounded-xl border border-cream-300 bg-cream-50 px-4 py-2.5 text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" placeholder="Reactivity, resource guarding, escape tendencies, triggers…"></textarea>
                 </div>
               </div>
 
-              <div class="mb-5">
-                <label for="vaccination" class="block text-sm font-semibold text-ink mb-2">Vaccination Status <span class="text-terracotta-500">*</span></label>
-                <select required id="vaccination" name="vaccination_status" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition">
-                  <option value="">Select…</option>
-                  <option>Up to date on all vaccinations</option>
-                  <option>Partially vaccinated</option>
-                  <option>Not vaccinated / unsure</option>
-                </select>
-              </div>
+              <p class="text-ink/60 text-xs leading-relaxed mt-4">All dogs need current rabies, DHPP, and bordetella vaccines. We'll ask for records and a recent fecal test before the first outing.</p>
 
-              <div class="mb-5">
-                <p class="block text-sm font-semibold text-ink mb-2">Vaccination &amp; Fecal Records</p>
-                <div class="rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-sm text-ink/70 leading-relaxed">
-                  We require rabies, DHPP, and bordetella. Please email your dog's up-to-date vaccination and fecal test records to <a href="mailto:highbridgedogcare@gmail.com" class="text-terracotta-600 font-semibold hover:text-terracotta-500 transition-colors">highbridgedogcare@gmail.com</a> so we can confirm everything's current before the first day.
-                </div>
-              </div>
-
-              <div class="mb-5">
-                <label for="temperament" class="block text-sm font-semibold text-ink mb-2">Temperament &amp; Safety Notes <span class="text-terracotta-500">*</span></label>
-                <textarea required id="temperament" name="temperament_safety" rows="3" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" placeholder="How does your dog do with other dogs and people? Any reactivity, resource guarding, escape/jumping tendencies, or triggers we should know about?"></textarea>
-              </div>
-
-              <button type="submit" class="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-cream-50 font-semibold px-8 py-4 shadow-sm transition-colors">
-                Request My Spot
+              <button type="submit" class="mt-5 w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-cream-50 font-semibold px-7 py-3 shadow-sm transition-colors">
+                Send My Request
               </button>
 
               <!-- Feedback messages -->
