@@ -424,14 +424,91 @@
           <h2 class="reveal font-serif text-3xl sm:text-5xl text-ink mb-5">See Us in Action</h2>
           <p class="reveal text-ink/70 text-lg leading-relaxed">A quick look at what a day with High Bridge Dog Care looks like.</p>
         </div>
-        <div class="reveal flex justify-center">
+
+        <!-- VIDEO: upload images/see-us-in-action.mp4 (and optionally a still frame,
+             images/see-us-in-action.jpg, shown while it loads). Vertical or landscape both work.
+             Until the .mp4 exists, the Instagram post below is shown instead. -->
+        <div id="video-player" class="reveal relative mx-auto w-full max-w-sm rounded-[2rem] overflow-hidden shadow-xl bg-tan-100" style="aspect-ratio: 9 / 16;">
+          <video id="ad-video" class="absolute inset-0 w-full h-full object-cover" muted loop playsinline preload="metadata" aria-label="Dogs out on a High Bridge Dog Care adventure">
+            <source src="images/see-us-in-action.mp4" type="video/mp4" />
+          </video>
+          <button id="video-sound" type="button" class="absolute bottom-4 right-4 inline-flex items-center gap-2 rounded-full bg-ink/70 hover:bg-ink/85 backdrop-blur-sm text-cream-50 text-sm font-semibold px-4 py-2 shadow-lg transition-colors">
+            <svg id="icon-muted" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5L6 9H3v6h3l5 4V5zM17 9l4 6m0-6l-4 6" /></svg>
+            <svg id="icon-sound" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5L6 9H3v6h3l5 4V5zM15.5 8.5a5 5 0 010 7M18.5 5.5a9 9 0 010 13" /></svg>
+            <span id="video-sound-label">Tap for sound</span>
+          </button>
+        </div>
+
+        <!-- Fallback until the video file is uploaded: the Instagram post (its script loads only if needed) -->
+        <div id="video-fallback" class="reveal hidden flex justify-center">
           <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DefeVHYPmpg/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:0; max-width:540px; min-width:326px; width:100%; padding:0;">
             <a href="https://www.instagram.com/p/DefeVHYPmpg/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-terracotta-600 font-semibold">Watch our video on Instagram →</a>
           </blockquote>
         </div>
       </div>
     </section>
-    <script async src="https://www.instagram.com/embed.js"></script>
+    <script>
+      (function () {
+        'use strict';
+        var player = document.getElementById('video-player');
+        var video = document.getElementById('ad-video');
+        var source = video.querySelector('source');
+        var fallback = document.getElementById('video-fallback');
+        var soundBtn = document.getElementById('video-sound');
+        var POSTER = 'images/see-us-in-action.jpg';
+
+        // No video file yet (or it can't play): show the Instagram post instead.
+        var fellBack = false;
+        function useFallback() {
+          if (fellBack) return;
+          fellBack = true;
+          player.classList.add('hidden');
+          fallback.classList.remove('hidden');
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.instagram.com/embed.js';
+          document.body.appendChild(s);
+        }
+        source.addEventListener('error', useFallback);
+        video.addEventListener('error', useFallback);
+
+        // Use the still frame as a poster only if it's been uploaded (avoids a broken poster).
+        var still = new Image();
+        still.onload = function () { video.poster = POSTER; };
+        still.src = POSTER;
+
+        // Match the frame to the video's real shape (vertical clips stay narrow, landscape goes wide).
+        video.addEventListener('loadedmetadata', function () {
+          if (!video.videoWidth) return;
+          player.style.aspectRatio = video.videoWidth + ' / ' + video.videoHeight;
+          if (video.videoWidth > video.videoHeight) player.classList.replace('max-w-sm', 'max-w-2xl');
+        });
+
+        // Play silently while on screen; pause when scrolled away. Respect reduced-motion settings.
+        var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduceMotion) {
+          video.controls = true;
+        } else if ('IntersectionObserver' in window) {
+          new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) { var p = video.play(); if (p && p.catch) p.catch(function () {}); }
+              else { video.pause(); }
+            });
+          }, { threshold: 0.4 }).observe(video);
+        }
+
+        // Sound toggle
+        soundBtn.addEventListener('click', function () {
+          video.muted = !video.muted;
+          if (!video.muted && video.paused) video.play();
+          document.getElementById('icon-muted').classList.toggle('hidden', !video.muted);
+          document.getElementById('icon-sound').classList.toggle('hidden', video.muted);
+          document.getElementById('video-sound-label').textContent = video.muted ? 'Tap for sound' : 'Sound on';
+          soundBtn.setAttribute('aria-pressed', String(!video.muted));
+        });
+        soundBtn.setAttribute('aria-pressed', 'false');
+      })();
+    </script>
 
     <!-- ============================= WHY DOGS & OWNERS LOVE US ============================= -->
     <section id="why" class="py-14 sm:py-20 bg-cream-50">
