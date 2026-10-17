@@ -47,6 +47,11 @@
 <body class="bg-cream-50 text-ink font-sans antialiased min-h-screen">
 
   <div class="max-w-4xl mx-auto px-5 sm:px-8 py-16 sm:py-20">
+    <!-- Way into the main site, for clients who land here from a direct link -->
+    <a href="/" class="inline-flex items-center gap-1.5 text-sm font-semibold text-ink/60 hover:text-terracotta-600 transition-colors mb-8">
+      <span aria-hidden="true">&larr;</span> Visit our website
+    </a>
+
     <!-- Wordmark -->
     <a href="/" class="flex items-center gap-3 justify-center mb-10">
       <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-terracotta-500 text-cream-50 font-serif text-lg leading-none shadow-sm">HB</span>
@@ -240,13 +245,17 @@
       <!-- Feedback messages -->
       <p id="form-success" class="hidden mt-5 rounded-xl bg-green-50 border border-green-200 text-green-800 px-4 py-3 text-sm">
         🐾 Thank you! Your signed waiver has been received. We'll be in touch to get your pup started.
+        In the meantime, <a href="/" class="font-semibold underline hover:text-green-900">take a look around our website</a>.
       </p>
       <p id="form-error" class="hidden mt-5 rounded-xl bg-red-50 border border-red-200 text-red-800 px-4 py-3 text-sm">
         Something went wrong submitting your waiver. Please try again, or email us directly at highbridgedogcare@gmail.com.
       </p>
     </form>
 
-    <p class="text-center text-ink/50 text-xs mt-6">High Bridge Farm LLC, doing business as High Bridge Dog Care · Insured through Pet Care Insurance (PCI)</p>
+    <p class="text-center text-ink/70 text-sm mt-8">
+      New to High Bridge Dog Care? <a href="/" class="text-terracotta-600 font-semibold hover:text-terracotta-500 transition-colors">See where we explore and what a day looks like &rarr;</a>
+    </p>
+    <p class="text-center text-ink/50 text-xs mt-4">High Bridge Farm LLC, doing business as High Bridge Dog Care · Insured through Pet Care Insurance (PCI)</p>
   </div>
 
   <script>
