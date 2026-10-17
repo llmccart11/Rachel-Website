@@ -714,7 +714,7 @@
               <div class="mb-5">
                 <p class="block text-sm font-semibold text-ink mb-2">Vaccination &amp; Fecal Records</p>
                 <div class="rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-sm text-ink/70 leading-relaxed">
-                  Please email your dog's up-to-date vaccination and fecal test records to <a href="mailto:highbridgedogcare@gmail.com" class="text-terracotta-600 font-semibold hover:text-terracotta-500 transition-colors">highbridgedogcare@gmail.com</a> so we can confirm everything's current before the first day.
+                  We require rabies, DHPP, and bordetella. Please email your dog's up-to-date vaccination and fecal test records to <a href="mailto:highbridgedogcare@gmail.com" class="text-terracotta-600 font-semibold hover:text-terracotta-500 transition-colors">highbridgedogcare@gmail.com</a> so we can confirm everything's current before the first day.
                 </div>
               </div>
 
@@ -730,6 +730,8 @@
               <!-- Feedback messages -->
               <p id="form-success" class="hidden mt-5 rounded-xl bg-green-50 border border-green-200 text-green-800 px-4 py-3 text-sm">
                 🐾 Thank you! Your request has been sent. We'll be in touch soon to set up your trial day.
+                <a href="/waiver/" class="block mt-2 font-semibold text-terracotta-600 hover:text-terracotta-500 transition-colors">Next step: sign the daycare agreement &rarr;</a>
+                <span class="block text-green-800/70 text-xs mt-1">We'll carry over what you just entered, so you won't have to type it again.</span>
               </p>
               <p id="form-error" class="hidden mt-5 rounded-xl bg-red-50 border border-red-200 text-red-800 px-4 py-3 text-sm">
                 Something went wrong sending your request. Please try again, or email us directly at highbridgedogcare@gmail.com.
@@ -739,7 +741,7 @@
 
           <!-- New-client waiver link -->
           <p class="reveal text-center text-ink/70 text-sm mt-8">
-            New client? Please review and sign our <a href="/waiver/" class="text-terracotta-600 font-semibold hover:text-terracotta-500 transition-colors">daycare agreement &amp; waiver</a> before the first outing.
+            New client? Please review and sign our <a href="/waiver/" class="text-terracotta-600 font-semibold hover:text-terracotta-500 transition-colors">daycare agreement &amp; waiver</a> before your trial day.
           </p>
 
           <!-- Boarding note (secondary service, by inquiry) -->
@@ -1001,6 +1003,24 @@
       var form = document.getElementById('intake-form');
       var successMsg = document.getElementById('form-success');
       var errorMsg = document.getElementById('form-error');
+
+      // Hand the overlapping details to the waiver page (same tab only) so
+      // clients don't retype them. Keys match the waiver's field names.
+      function saveForWaiver() {
+        var f = form.elements;
+        try {
+          sessionStorage.setItem('hbdc-intake', JSON.stringify({
+            owner_name: f['owner_name'].value,
+            email: f['email'].value,
+            phone: f['phone'].value,
+            address: f['pickup_address'].value,
+            dog_name: f['dog_name'].value,
+            breed: f['breed'].value,
+            behavior: f['temperament_safety'].value
+          }));
+        } catch (err) { /* storage unavailable: waiver just starts blank */ }
+      }
+
       form.addEventListener('submit', function (e) {
         // Native validation handles required fields first.
         if (!form.checkValidity()) return;
@@ -1025,6 +1045,7 @@
           headers: { 'Accept': 'application/json' }
         }).then(function (response) {
           if (response.ok) {
+            saveForWaiver();
             successMsg.classList.remove('hidden');
             form.reset();
             successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });

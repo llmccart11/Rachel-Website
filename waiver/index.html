@@ -126,6 +126,11 @@
       <!-- Honeypot anti-spam field (leave empty) -->
       <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
 
+      <!-- Shown when details were carried over from the homepage intake form -->
+      <p id="prefill-note" class="hidden mb-6 rounded-xl bg-terracotta-50 border border-terracotta-100 text-ink/80 px-4 py-3 text-sm">
+        We've filled in the details from your intake form. Please double-check them and complete the rest.
+      </p>
+
       <!-- Client & Dog Information -->
       <p class="text-xs font-semibold uppercase tracking-widest text-terracotta-500 mb-4">Client &amp; Dog Information</p>
       <div class="grid sm:grid-cols-2 gap-4 mb-4">
@@ -260,6 +265,18 @@
       var dateInput = document.getElementById('sign-date');
       if (dateInput) dateInput.value = todayLocal();
 
+      // Carry over details the client already gave on the homepage intake form
+      var carried = null;
+      try { carried = JSON.parse(sessionStorage.getItem('hbdc-intake') || 'null'); } catch (err) {}
+      if (carried) {
+        var filled = 0;
+        Object.keys(carried).forEach(function (name) {
+          var field = form.elements[name];
+          if (field && !field.value && carried[name]) { field.value = carried[name]; filled++; }
+        });
+        if (filled) document.getElementById('prefill-note').classList.remove('hidden');
+      }
+
       // Selecting "Other" focuses the amount; typing an amount selects "Other"
       var otherRadio = document.getElementById('vet-other-radio');
       var otherAmount = document.getElementById('vet-other-amount');
@@ -303,6 +320,8 @@
         fetch(action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
           .then(function (response) {
             if (response.ok) {
+              try { sessionStorage.removeItem('hbdc-intake'); } catch (err) {}
+              document.getElementById('prefill-note').classList.add('hidden');
               successMsg.classList.remove('hidden');
               form.reset();
               syncOtherRequired();
