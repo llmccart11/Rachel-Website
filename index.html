@@ -730,8 +730,6 @@
               <!-- Feedback messages -->
               <p id="form-success" class="hidden mt-5 rounded-xl bg-green-50 border border-green-200 text-green-800 px-4 py-3 text-sm">
                 🐾 Thank you! Your request has been sent. We'll be in touch soon to set up your trial day.
-                <a href="/waiver/" class="block mt-2 font-semibold text-terracotta-600 hover:text-terracotta-500 transition-colors">Next step: sign the daycare agreement &rarr;</a>
-                <span class="block text-green-800/70 text-xs mt-1">We'll carry over what you just entered, so you won't have to type it again.</span>
               </p>
               <p id="form-error" class="hidden mt-5 rounded-xl bg-red-50 border border-red-200 text-red-800 px-4 py-3 text-sm">
                 Something went wrong sending your request. Please try again, or email us directly at highbridgedogcare@gmail.com.
@@ -1004,8 +1002,9 @@
       var successMsg = document.getElementById('form-success');
       var errorMsg = document.getElementById('form-error');
 
-      // Hand the overlapping details to the waiver page (same tab only) so
-      // clients don't retype them. Keys match the waiver's field names.
+      // Remember the overlapping details (this tab only) so that if the client
+      // opens the waiver later in this visit, they don't retype them. Keys
+      // match the waiver's field names.
       function saveForWaiver() {
         var f = form.elements;
         try {
