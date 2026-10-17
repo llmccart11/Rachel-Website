@@ -46,6 +46,112 @@
   }
   </script>
 
+  <!-- FAQ structured data (keep in sync with the FAQ section) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What dogs do you take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dogs 4 months and up, with no upper age limit, so seniors are welcome. There are no size or breed restrictions, and dogs don't need to be spayed or neutered."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does my dog need to get along with other dogs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Outings are in small groups, so dogs need to be friendly or neutral with other dogs. I've introduced a lot of new dogs and follow a process for safe introductions before we head out together."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does my dog need good recall?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Solid recall is preferred. If your dog is still working on it, I'll consider them case by case, and they stay on leash while they learn."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What vaccines are required?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Rabies, DHPP, and bordetella, plus a recent fecal test. I'll ask for records before the first outing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does a typical day look like?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "I pick up between 8 and 10 am, Monday through Friday. If you need a different time, let me know and I'll work with your schedule when I can. Dogs are out for roughly 3 hours, with about 2 hours of hiking and play, then I bring them home."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to be home for pickup?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Just text me any door or gate codes. I keep codes private and make sure your home is secured when I leave."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do dogs get to the trails?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In my vehicle, with every dog safely harnessed in."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What about bad weather?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Outings happen rain or shine. I towel dogs off before drop-off, but they may still come home wet, muddy, and happily tired."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if my dog gets hurt or sick?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "I contact you or your emergency contact first, then your vet or the nearest clinic, up to the treatment limit you set in the daycare agreement."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will I hear how the day went?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You'll get an update with photos and videos of your pup after drop-off."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are you licensed and insured?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. High Bridge Dog Care is licensed and insured through Pet Care Insurance (PCI)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do payment and cancellations work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Payment is due after each outing by Venmo or Zelle. Please give at least 24 hours' notice if your dog will miss a day. You get 2 late cancellations a year at no charge; after that, late cancellations and no-shows are 50% of the daily rate."
+        }
+      }
+    ]
+  }
+  </script>
+
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -98,6 +204,9 @@
 
     /* Section offset so smooth-scroll clears the sticky nav */
     section[id] { scroll-margin-top: 80px; }
+
+    /* FAQ: hide the default disclosure triangle (Safari) */
+    #faq summary::-webkit-details-marker { display: none; }
 
     /* Reveal-on-scroll */
     .reveal {
@@ -201,6 +310,7 @@
         <a href="#property" class="nav-link">Where We Explore</a>
         <a href="#area" class="nav-link">Pickup Area</a>
         <a href="#about" class="nav-link">About Us</a>
+        <a href="#faq" class="nav-link">FAQ</a>
         <a href="#gallery" class="nav-link">Gallery</a>
         <a href="#reserve" class="inline-flex items-center rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-cream-50 px-5 py-2.5 shadow-sm transition-colors">Sign Up</a>
       </div>
@@ -220,6 +330,7 @@
         <a href="#property" class="mobile-link py-3 border-b border-cream-300 hover:text-terracotta-500">Where We Explore</a>
         <a href="#area" class="mobile-link py-3 border-b border-cream-300 hover:text-terracotta-500">Pickup Area</a>
         <a href="#about" class="mobile-link py-3 border-b border-cream-300 hover:text-terracotta-500">About Us</a>
+        <a href="#faq" class="mobile-link py-3 border-b border-cream-300 hover:text-terracotta-500">FAQ</a>
         <a href="#gallery" class="mobile-link py-3 border-b border-cream-300 hover:text-terracotta-500">Gallery</a>
         <a href="#reserve" class="mobile-link mt-3 text-center rounded-full bg-terracotta-500 text-cream-50 px-5 py-3">Sign Up</a>
       </div>
@@ -254,6 +365,10 @@
     </a>
     <a href="#reserve" data-target="reserve" class="jump-link flex items-center justify-end gap-3 group">
       <span class="jump-label text-xs font-semibold uppercase tracking-wider text-ink bg-cream-100 px-2.5 py-1 rounded-full shadow-sm">Sign Up</span>
+      <span class="jump-dot w-2.5 h-2.5 rounded-full bg-tan-300"></span>
+    </a>
+    <a href="#faq" data-target="faq" class="jump-link flex items-center justify-end gap-3 group">
+      <span class="jump-label text-xs font-semibold uppercase tracking-wider text-ink bg-cream-100 px-2.5 py-1 rounded-full shadow-sm">FAQ</span>
       <span class="jump-dot w-2.5 h-2.5 rounded-full bg-tan-300"></span>
     </a>
     <a href="#gallery" data-target="gallery" class="jump-link flex items-center justify-end gap-3 group">
@@ -694,8 +809,109 @@
       </div>
     </section>
 
+    <!-- ============================= FAQ ============================= -->
+    <section id="faq" class="py-14 sm:py-20 bg-cream-50">
+      <div class="max-w-3xl mx-auto px-5 sm:px-8">
+        <div class="text-center mb-10">
+          <h2 class="reveal font-serif text-3xl sm:text-5xl text-ink mb-5">Common Questions</h2>
+          <p class="reveal text-ink/70 text-lg leading-relaxed">The things people usually ask before signing up.</p>
+        </div>
+
+        <div class="reveal border-t border-cream-300">
+          <details class="group border-b border-cream-300 py-5">
+            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-semibold text-ink text-lg">
+              What dogs do you take?
+              <span aria-hidden="true" class="flex-shrink-0 text-terracotta-500 text-2xl leading-none transition-transform duration-200 group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-3 text-ink/70 leading-relaxed">Dogs 4 months and up, with no upper age limit, so seniors are welcome. There are no size or breed restrictions, and dogs don't need to be spayed or neutered.</p>
+          </details>
+          <details class="group border-b border-cream-300 py-5">
+            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-semibold text-ink text-lg">
+              Does my dog need to get along with other dogs?
+              <span aria-hidden="true" class="flex-shrink-0 text-terracotta-500 text-2xl leading-none transition-transform duration-200 group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-3 text-ink/70 leading-relaxed">Yes. Outings are in small groups, so dogs need to be friendly or neutral with other dogs. I've introduced a lot of new dogs and follow a process for safe introductions before we head out together.</p>
+          </details>
+          <details class="group border-b border-cream-300 py-5">
+            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-semibold text-ink text-lg">
+              Does my dog need good recall?
+              <span aria-hidden="true" class="flex-shrink-0 text-terracotta-500 text-2xl leading-none transition-transform duration-200 group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-3 text-ink/70 leading-relaxed">Solid recall is preferred. If your dog is still working on it, I'll consider them case by case, and they stay on leash while they learn.</p>
+          </details>
+          <details class="group border-b border-cream-300 py-5">
+            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-semibold text-ink text-lg">
+              What vaccines are required?
+              <span aria-hidden="true" class="flex-shrink-0 text-terracotta-500 text-2xl leading-none transition-transform duration-200 group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-3 text-ink/70 leading-relaxed">Rabies, DHPP, and bordetella, plus a recent fecal test. I'll ask for records before the first outing.</p>
+          </details>
+          <details class="group border-b border-cream-300 py-5">
+            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-semibold text-ink text-lg">
+              What does a typical day look like?
+              <span aria-hidden="true" class="flex-shrink-0 text-terracotta-500 text-2xl leading-none transition-transform duration-200 group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-3 text-ink/70 leading-relaxed">I pick up between 8 and 10 am, Monday through Friday. If you need a different time, let me know and I'll work with your schedule when I can. Dogs are out for roughly 3 hours, with about 2 hours of hiking and play, then I bring them home.</p>
+          </details>
+          <details class="group border-b border-cream-300 py-5">
+            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-semibold text-ink text-lg">
+              Do I need to be home for pickup?
+              <span aria-hidden="true" class="flex-shrink-0 text-terracotta-500 text-2xl leading-none transition-transform duration-200 group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-3 text-ink/70 leading-relaxed">No. Just text me any door or gate codes. I keep codes private and make sure your home is secured when I leave.</p>
+          </details>
+          <details class="group border-b border-cream-300 py-5">
+            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-semibold text-ink text-lg">
+              How do dogs get to the trails?
+              <span aria-hidden="true" class="flex-shrink-0 text-terracotta-500 text-2xl leading-none transition-transform duration-200 group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-3 text-ink/70 leading-relaxed">In my vehicle, with every dog safely harnessed in.</p>
+          </details>
+          <details class="group border-b border-cream-300 py-5">
+            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-semibold text-ink text-lg">
+              What about bad weather?
+              <span aria-hidden="true" class="flex-shrink-0 text-terracotta-500 text-2xl leading-none transition-transform duration-200 group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-3 text-ink/70 leading-relaxed">Outings happen rain or shine. I towel dogs off before drop-off, but they may still come home wet, muddy, and happily tired.</p>
+          </details>
+          <details class="group border-b border-cream-300 py-5">
+            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-semibold text-ink text-lg">
+              What happens if my dog gets hurt or sick?
+              <span aria-hidden="true" class="flex-shrink-0 text-terracotta-500 text-2xl leading-none transition-transform duration-200 group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-3 text-ink/70 leading-relaxed">I contact you or your emergency contact first, then your vet or the nearest clinic, up to the treatment limit you set in the daycare agreement.</p>
+          </details>
+          <details class="group border-b border-cream-300 py-5">
+            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-semibold text-ink text-lg">
+              Will I hear how the day went?
+              <span aria-hidden="true" class="flex-shrink-0 text-terracotta-500 text-2xl leading-none transition-transform duration-200 group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-3 text-ink/70 leading-relaxed">Yes. You'll get an update with photos and videos of your pup after drop-off.</p>
+          </details>
+          <details class="group border-b border-cream-300 py-5">
+            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-semibold text-ink text-lg">
+              Are you licensed and insured?
+              <span aria-hidden="true" class="flex-shrink-0 text-terracotta-500 text-2xl leading-none transition-transform duration-200 group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-3 text-ink/70 leading-relaxed">Yes. High Bridge Dog Care is licensed and insured through Pet Care Insurance (PCI).</p>
+          </details>
+          <details class="group border-b border-cream-300 py-5">
+            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-semibold text-ink text-lg">
+              How do payment and cancellations work?
+              <span aria-hidden="true" class="flex-shrink-0 text-terracotta-500 text-2xl leading-none transition-transform duration-200 group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-3 text-ink/70 leading-relaxed">Payment is due after each outing by Venmo or Zelle. Please give at least 24 hours' notice if your dog will miss a day. You get 2 late cancellations a year at no charge; after that, late cancellations and no-shows are 50% of the daily rate.</p>
+          </details>
+        </div>
+
+        <p class="reveal text-center text-ink/70 mt-10">
+          Still have a question? <a href="mailto:highbridgedogcare@gmail.com" class="text-terracotta-600 font-semibold hover:text-terracotta-500 transition-colors">Email me</a> or <a href="#reserve" class="text-terracotta-600 font-semibold hover:text-terracotta-500 transition-colors">sign up</a> and we'll talk it through.
+        </p>
+      </div>
+    </section>
+
     <!-- ============================= GALLERY ============================= -->
-    <section id="gallery" class="py-14 sm:py-20 bg-cream-50">
+    <section id="gallery" class="py-14 sm:py-20 bg-cream-100">
       <div class="max-w-screen-2xl mx-auto px-5 sm:px-8">
         <div class="text-center max-w-2xl mx-auto mb-16">
           <h2 class="reveal font-serif text-3xl sm:text-5xl text-ink mb-5">Gallery</h2>
@@ -747,7 +963,7 @@
     </section>
 
     <!-- ============================= FOSTER (ADOPTABLE DOG) ============================= -->
-    <section id="foster" class="py-14 sm:py-20 bg-cream-100">
+    <section id="foster" class="py-14 sm:py-20 bg-cream-50">
       <div class="max-w-7xl mx-auto px-5 sm:px-8">
         <!-- Foster looking for a home -->
         <div class="reveal bg-cream-50 rounded-[2rem] border border-cream-300 shadow-sm overflow-hidden">
