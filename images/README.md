@@ -31,10 +31,11 @@ spot shows a soft tan placeholder (no broken-image icons).
 
 ## The video
 - Until `see-us-in-action.mp4` is uploaded, that section shows the Instagram post instead.
-- Must be an **`.mp4` under 25 MB** (the hosting limit). 15–30 seconds is plenty.
-  An iPhone `.mov` won't work as-is: export or convert it to `.mp4` first
-  (e.g. on a Mac, open it in QuickTime → File → Export As → 1080p, then rename to `.mp4`,
-  or use a free converter such as HandBrake).
+- Must be an **`.mp4` (H.264) under 25 MB** (the hosting limit). 15–30 seconds is plenty.
+  iPhone videos usually need converting first, because Chrome and Firefox can't play
+  the iPhone's default format. Easiest: the free app **HandBrake** with the
+  "Fast 1080p30" preset, which saves an `.mp4` that plays everywhere.
+  Or just hand the original to Claude to convert.
 - To make the still frame, take a screenshot of a good moment in the video and save it as
   `see-us-in-action.jpg`.
 
