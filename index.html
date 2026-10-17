@@ -433,7 +433,7 @@
              Until the .mp4 exists, the Instagram post below is shown instead. -->
         <div id="video-player" class="reveal relative mx-auto w-full max-w-sm rounded-[2rem] overflow-hidden shadow-xl bg-tan-100" style="aspect-ratio: 9 / 16;">
           <video id="ad-video" class="absolute inset-0 w-full h-full object-cover" muted loop playsinline preload="metadata" aria-label="Dogs out on a High Bridge Dog Care adventure">
-            <source src="images/see-us-in-action.mp4" type="video/mp4" />
+            <source src="images/see-us-in-action.mp4?v=2" type="video/mp4" />
           </video>
           <button id="video-sound" type="button" class="absolute bottom-4 right-4 inline-flex items-center gap-2 rounded-full bg-ink/70 hover:bg-ink/85 backdrop-blur-sm text-cream-50 text-sm font-semibold px-4 py-2 shadow-lg transition-colors">
             <svg id="icon-muted" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5L6 9H3v6h3l5 4V5zM17 9l4 6m0-6l-4 6" /></svg>
@@ -458,7 +458,7 @@
         var source = video.querySelector('source');
         var fallback = document.getElementById('video-fallback');
         var soundBtn = document.getElementById('video-sound');
-        var POSTER = 'images/see-us-in-action.jpg';
+        var POSTER = 'images/see-us-in-action.jpg?v=2';  // bump ?v= when replacing the files, so browsers don't show the old copy
 
         // No video file yet (or it can't play): show the Instagram post instead.
         var fellBack = false;
