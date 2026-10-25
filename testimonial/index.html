@@ -64,8 +64,10 @@
       </p>
     </div>
 
-    <form id="testimonial-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="bg-white rounded-[2rem] p-8 sm:p-10 border border-cream-300 shadow-2xl">
-      <!-- NOTE: Replace YOUR_FORM_ID with the real Formspree form ID for testimonials. -->
+    <form id="testimonial-form" action="https://formspree.io/f/xykrkpjp" method="POST" class="bg-white rounded-[2rem] p-8 sm:p-10 border border-cream-300 shadow-2xl">
+      <!-- Shares the booking Formspree form for now; swap in a dedicated testimonials ID when ready. -->
+      <input type="hidden" name="_subject" value="New testimonial — High Bridge Dog Care" />
+      <input type="hidden" name="form_type" value="Testimonial" />
       <div class="mb-5">
         <label for="t-name" class="block text-sm font-semibold text-ink mb-2">Your Name <span class="text-terracotta-500">*</span></label>
         <input required type="text" id="t-name" name="your_name" class="w-full rounded-xl border border-cream-300 bg-cream-100 px-4 py-3 text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-terracotta-300 focus:border-terracotta-300 transition" placeholder="Jane Doe" />
